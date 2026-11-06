@@ -1,0 +1,1881 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harwood Skin Clinic — Private Skin Clinic in Bolton</title>
+<meta name="description" content="Harwood Skin Clinic is a private skin clinic in Bolton, founded by Natasha Snape. Microneedling, chemical peels, Signature Glass Skin and facials — clinical expertise, personal care, confident skin." />
+<meta name="theme-color" content="#343B30" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23343B30'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='34' fill='%23F8F7F3' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* HARWOOD SKIN CLINIC — standalone build. One file, no build step, no dependencies. */
+:root{
+  --olive:#343B30;--espresso:#25241F;--limestone:#E7E0D5;--porcelain:#F8F7F3;
+  --sage:#A6AA98;--taupe:#B5A694;--ink:#272824;
+  --line:rgba(52,59,48,.16);--line-light:rgba(248,247,243,.20);
+  --serif:'Bodoni Moda','Times New Roman',Georgia,serif;
+  --sans:'Jost',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--limestone);color:var(--ink);font-family:var(--sans);font-size:16px;
+  line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body.is-loading{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0}
+p{margin:0}
+ul,ol,dl,dd{margin:0;padding:0;list-style:none}
+::selection{background:var(--olive);color:var(--porcelain)}
+:focus-visible{outline:1.5px solid var(--olive);outline-offset:3px}
+section[id]{scroll-margin-top:96px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* type */
+.display{font-family:var(--serif);font-weight:400;line-height:.96;letter-spacing:-.012em}
+.d1{font-size:clamp(2.65rem,8.4vw,5.15rem)}
+.d2{font-size:clamp(2.05rem,5vw,3.85rem)}
+.d3{font-size:clamp(1.9rem,4.4vw,3.1rem)}
+.d4{font-size:clamp(1.75rem,3.6vw,2.6rem)}
+em,.it{font-style:italic}
+.eyebrow{font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;line-height:1.4}
+.lede{font-size:.97rem;line-height:1.75;font-weight:300}
+.tiny{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;line-height:1.5}
+
+/* layout */
+.wrap{width:100%;max-width:1560px;margin:0 auto}
+.sec{padding:84px 22px}
+@media (min-width:640px){.sec{padding:104px 40px}}
+@media (min-width:1024px){.sec{padding:140px 48px}}
+.g12{display:grid;gap:44px}
+@media (min-width:1024px){
+  .g12{grid-template-columns:repeat(12,1fr);gap:40px}
+  .s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}
+  .s7{grid-column:span 7}
+  .from6{grid-column:6/span 7}.from7{grid-column:7/span 6}.from9{grid-column:9/span 4}
+  .wide-gap{gap:64px}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 32px;
+  font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;
+  transition:background .45s ease,color .45s ease,border-color .45s ease}
+.btn-solid{background:var(--olive);color:var(--porcelain)}
+.btn-solid:hover{background:var(--espresso)}
+.btn-outline{border:1px solid rgba(52,59,48,.35);color:var(--olive)}
+.btn-outline:hover{background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.btn-light{border:1px solid rgba(248,247,243,.4);color:var(--porcelain)}
+.btn-light:hover{background:var(--porcelain);border-color:var(--porcelain);color:var(--espresso)}
+.btn-cream{background:var(--porcelain);color:var(--espresso)}
+.btn-cream:hover{background:var(--limestone)}
+.linkish{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(52,59,48,.7);
+  border-bottom:1px solid rgba(52,59,48,.25);padding-bottom:3px;transition:color .3s}
+.linkish:hover{color:var(--olive)}
+.link-underline{position:relative;display:inline-block}
+.link-underline::after{content:'';position:absolute;left:0;bottom:-3px;height:1px;width:100%;
+  background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.link-underline:hover::after{transform:scaleX(1)}
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+  background:var(--espresso);opacity:1;transition:opacity .8s cubic-bezier(.22,1,.36,1)}
+.loader.leaving{opacity:0}
+.loader-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(166,170,152,.16),rgba(37,36,31,0) 62%)}
+.loader-inner{position:relative;display:flex;flex-direction:column;align-items:center;width:100%;max-width:32rem;padding:0 32px;text-align:center}
+.loader-rule{height:1px;width:64px;background:rgba(166,170,152,.6)}
+.loader-word{margin-top:38px;font-family:var(--serif);font-size:2.6rem;line-height:1;letter-spacing:.14em;color:var(--porcelain)}
+@media (min-width:640px){.loader-word{font-size:3.5rem}}
+.loader-sub{margin-top:20px;font-size:.6rem;letter-spacing:.6em;text-transform:uppercase;color:rgba(248,247,243,.55)}
+.loader-track{margin-top:52px;height:1px;width:160px;background:rgba(248,247,243,.15);overflow:hidden}
+.loader-bar{height:1px;width:0;background:var(--sage);transition:width .12s linear}
+.loader-place{margin-top:20px;font-size:.52rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(248,247,243,.35)}
+
+/* header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,border-color .5s,backdrop-filter .5s;
+  border-bottom:1px solid transparent;background:transparent}
+.site-header.scrolled{background:rgba(231,224,213,.94);border-bottom-color:rgba(52,59,48,.12);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1560px;margin:0 auto;padding:16px 22px}
+@media (min-width:1024px){.header-inner{padding:20px 48px}}
+.wordmark{display:block;line-height:1}
+.wm-main{display:block;font-family:var(--serif);font-size:1.15rem;letter-spacing:.2em;color:var(--olive)}
+@media (min-width:640px){.wm-main{font-size:1.3rem}}
+.wm-sub{display:block;margin-top:6px;font-size:.46rem;letter-spacing:.46em;text-transform:uppercase;color:rgba(52,59,48,.55)}
+.nav{display:none;align-items:center;gap:34px}
+@media (min-width:1024px){.nav{display:flex}}
+.nav a{font-size:.63rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(39,40,36,.75);transition:color .3s}
+.nav a:hover{color:var(--olive)}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn-book{display:none;border:1px solid rgba(52,59,48,.35);padding:12px 24px;font-size:.6rem;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--olive);transition:.45s}
+.btn-book:hover{background:var(--olive);color:var(--porcelain)}
+@media (min-width:640px){.btn-book{display:inline-flex}}
+.menu-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  width:40px;height:40px;border:1px solid rgba(52,59,48,.25)}
+@media (min-width:1024px){.menu-btn{display:none}}
+.menu-btn span{display:block;width:16px;height:1px;background:var(--olive)}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:60;display:none;flex-direction:column;
+  background:var(--espresso);color:var(--porcelain);padding:24px 28px}
+.mobile-menu.open{display:flex}
+.mm-top{display:flex;align-items:flex-start;justify-content:space-between}
+.mm-top .wm-main{color:var(--porcelain)}
+.mm-top .wm-sub{color:rgba(248,247,243,.55)}
+.mm-close{margin-top:4px;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(248,247,243,.6)}
+.mm-nav{margin-top:56px;display:flex;flex-direction:column;gap:22px}
+.mm-nav a{font-family:var(--serif);font-size:1.9rem;line-height:1;letter-spacing:-.01em;color:rgba(248,247,243,.92)}
+.mm-foot{margin-top:auto;border-top:1px solid rgba(248,247,243,.15);padding-top:28px;display:flex;flex-direction:column;gap:20px}
+.mm-row{display:flex;align-items:center;justify-content:space-between;font-size:.58rem;
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(248,247,243,.5)}
+
+/* hero */
+.hero{background:var(--limestone);padding-top:72px}
+@media (min-width:1024px){.hero{padding-top:0}}
+.hero-grid{display:grid}
+@media (min-width:1024px){.hero-grid{grid-template-columns:5fr 7fr;align-items:stretch}}
+.hero-copy{padding:32px 22px 56px}
+@media (min-width:640px){.hero-copy{padding:40px 40px 64px}}
+@media (min-width:1024px){.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:144px 56px 64px 48px}}
+@media (min-width:1280px){.hero-copy{padding-left:64px}}
+.hero-kicker{display:flex;align-items:center;gap:16px;color:rgba(52,59,48,.7)}
+.hero-kicker i{display:block;width:40px;height:1px;background:rgba(52,59,48,.4)}
+.hero-copy h1{margin-top:30px;color:var(--olive)}
+.hero-copy .lede{margin-top:30px;max-width:24rem;color:rgba(39,40,36,.78)}
+.hero-actions{margin-top:34px;display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.hero-actions{flex-direction:row;align-items:center}}
+.hero-meta{margin-top:44px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  border-top:1px solid var(--line);padding-top:22px}
+.hero-meta .tiny{color:rgba(52,59,48,.6)}
+.hero-meta .tiny + .tiny{margin-top:8px;color:rgba(52,59,48,.4)}
+.hero-scroll{display:none;align-items:center;gap:12px;color:rgba(52,59,48,.6)}
+@media (min-width:640px){.hero-scroll{display:flex}}
+.hero-scroll i{display:flex;align-items:center;justify-content:center;width:36px;height:36px;
+  border-radius:999px;border:1px solid rgba(52,59,48,.25);font-style:normal;font-size:.7rem;transition:.4s}
+.hero-scroll:hover i{background:var(--olive);color:var(--porcelain)}
+.hero-media{position:relative;height:62vh;min-height:360px;overflow:hidden;background:#cfcabf}
+@media (min-width:640px){.hero-media{height:70vh}}
+@media (min-width:1024px){.hero-media{height:100%;min-height:100vh}}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:55% center;
+  animation:hscZoom 2s cubic-bezier(.22,1,.36,1) both}
+@keyframes hscZoom{from{transform:scale(1.09)}to{transform:scale(1)}}
+.hero-caption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;
+  justify-content:space-between;gap:16px;padding:64px 24px 20px;
+  background:linear-gradient(to top,rgba(37,36,31,.5),rgba(37,36,31,.05) 60%,transparent)}
+.hero-caption p{max-width:15rem;font-size:.56rem;line-height:1.7;letter-spacing:.26em;
+  text-transform:uppercase;color:rgba(248,247,243,.85)}
+.hero-caption .est{display:none;font-size:.52rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(248,247,243,.6)}
+@media (min-width:640px){.hero-caption{padding:64px 32px 20px}.hero-caption .est{display:block}}
+
+/* statement */
+.statement{background:var(--porcelain)}
+.statement .eyebrow{color:rgba(52,59,48,.6)}
+.statement h2{margin-top:26px;color:var(--olive)}
+.statement-copy{display:flex;flex-direction:column;gap:20px;color:rgba(39,40,36,.75)}
+.statement-copy .sign{color:var(--olive)}
+.pillars{margin-top:64px;display:grid;gap:32px;border-top:1px solid var(--line);padding-top:40px}
+@media (min-width:640px){.pillars{grid-template-columns:repeat(3,1fr);gap:40px}}
+@media (min-width:1024px){.pillars{margin-top:96px}}
+.pillar .n{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(52,59,48,.45)}
+.pillar h3{margin-top:16px;font-size:1.35rem;line-height:1.3;color:var(--olive)}
+.pillar p{margin-top:12px;max-width:20rem;font-size:.88rem;line-height:1.7;color:rgba(39,40,36,.7)}
+
+/* natasha */
+.natasha{background:var(--limestone);overflow:hidden}
+.natasha figure{margin:0}
+.natasha-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:rgba(166,170,152,.25)}
+.natasha-img img{width:100%;height:100%;object-fit:cover}
+.natasha figcaption{margin-top:16px;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(52,59,48,.55)}
+.natasha figcaption span:last-child{display:none}
+@media (min-width:640px){.natasha figcaption span:last-child{display:inline}}
+.natasha .eyebrow{color:rgba(52,59,48,.6)}
+.natasha-copy h2{margin-top:26px;color:var(--olive)}
+.natasha-body{margin-top:30px;display:flex;flex-direction:column;gap:20px;
+  font-size:.95rem;line-height:1.8;color:rgba(39,40,36,.78)}
+.natasha-stats{margin-top:36px;display:grid;gap:28px;border-top:1px solid var(--line);padding-top:30px}
+@media (min-width:640px){.natasha-stats{grid-template-columns:auto 1fr;gap:56px;align-items:start}}
+.natasha-stats .big{font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--olive)}
+.natasha-stats .cap{margin-top:8px;max-width:8rem;font-size:.55rem;line-height:1.6;
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(52,59,48,.55)}
+.natasha-stats .say{max-width:22rem;font-size:.88rem;line-height:1.7;color:rgba(39,40,36,.65)}
+.natasha-actions{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.natasha-actions{flex-direction:row;align-items:center}}
+
+/* signature treatments */
+.signature{background:var(--porcelain)}
+.sec-head{display:flex;flex-direction:column;gap:24px;border-bottom:1px solid var(--line);padding-bottom:30px}
+@media (min-width:640px){.sec-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.sec-head .eyebrow{color:rgba(52,59,48,.6)}
+.sec-head h2{margin-top:22px;max-width:34rem;color:var(--olive)}
+.sec-head .menu-link{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(52,59,48,.7);flex-shrink:0}
+.card-grid{margin-top:48px;display:grid;gap:40px}
+@media (min-width:640px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.card-grid{grid-template-columns:repeat(4,1fr);gap:28px}}
+@media (min-width:1024px){.tcard.offset{margin-top:56px}}
+.tcard-media{position:relative;aspect-ratio:3/4;overflow:hidden;background:rgba(166,170,152,.25)}
+.tcard-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease-out}
+.tcard:hover .tcard-media img{transform:scale(1.04)}
+.tcard-tag{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;
+  justify-content:space-between;padding:40px 16px 16px;background:linear-gradient(to top,rgba(37,36,31,.6),transparent)}
+.tcard-tag span{font-size:.53rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,247,243,.85)}
+.tcard-tag span:last-child{color:rgba(248,247,243,.6)}
+.tcard h3{margin-top:20px;font-size:1.28rem;line-height:1.2;color:var(--olive)}
+.tcard .meta{margin-top:8px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(39,40,36,.45)}
+.tcard .sum{margin-top:12px;font-size:.86rem;line-height:1.7;color:rgba(39,40,36,.68)}
+
+/* clinic */
+.clinic{background:var(--espresso);color:var(--porcelain)}
+.clinic .eyebrow{color:var(--sage)}
+.clinic h2{margin-top:26px}
+.clinic-copy{display:flex;flex-direction:column;gap:20px;font-size:.94rem;line-height:1.8;color:rgba(248,247,243,.65)}
+.gallery{margin-top:56px;display:grid;gap:16px}
+@media (min-width:640px){.gallery{gap:20px}}
+@media (min-width:1024px){.gallery{grid-template-columns:repeat(12,1fr)}}
+.gfig{margin:0}
+@media (min-width:1024px){
+  .gfig.g8{grid-column:span 8}.gfig.g4{grid-column:span 4}
+  .gfig.g5{grid-column:span 5}.gfig.g7{grid-column:span 7}
+}
+.gfig .frame{position:relative;overflow:hidden;background:rgba(248,247,243,.06)}
+.gfig .frame img{width:100%;height:100%;object-fit:cover}
+.gfig.r1611 .frame{aspect-ratio:16/11}
+.gfig.r45 .frame{aspect-ratio:4/5}
+.gfig.r43 .frame{aspect-ratio:4/3}
+.gfig.r1610 .frame{aspect-ratio:16/10}
+@media (min-width:1024px){.gfig.r45 .frame{aspect-ratio:3/4}}
+.gfig figcaption{margin-top:12px;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,247,243,.4)}
+.gallery-note{margin-top:40px;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,247,243,.3)}
+
+/* approach */
+.approach{background:var(--limestone)}
+.approach .eyebrow{color:rgba(52,59,48,.6)}
+.approach h2{margin-top:26px;color:var(--olive)}
+.approach-lede{margin-top:26px;max-width:20rem;font-size:.9rem;line-height:1.7;color:rgba(39,40,36,.65)}
+.approach-list li{border-top:1px solid var(--line);padding:30px 0}
+.approach-list li:last-child{border-bottom:1px solid var(--line)}
+.approach-item{display:flex;gap:24px}
+@media (min-width:640px){.approach-item{gap:40px}}
+.approach-item .num{margin-top:4px;width:24px;flex-shrink:0;font-size:.55rem;letter-spacing:.24em;color:rgba(52,59,48,.4)}
+.approach-item h3{font-size:1.45rem;line-height:1.3;color:var(--olive)}
+@media (min-width:640px){.approach-item h3{font-size:1.65rem}}
+.approach-item p{margin-top:12px;max-width:32rem;font-size:.9rem;line-height:1.75;color:rgba(39,40,36,.72)}
+@media (min-width:1024px){.approach-aside{position:sticky;top:112px;align-self:start}}
+
+/* gateway */
+.gateway{background:var(--olive);color:var(--porcelain)}
+.gateway .eyebrow{color:var(--sage)}
+.gateway h2{margin-top:26px}
+.gateway-lede{margin-top:26px;max-width:24rem;font-size:.92rem;line-height:1.75;color:rgba(248,247,243,.68)}
+.cat-chips{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px}
+.cat-chips a{border:1px solid rgba(248,247,243,.25);padding:10px 16px;font-size:.55rem;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(248,247,243,.78);transition:.35s}
+.cat-chips a:hover{background:var(--porcelain);color:var(--olive);border-color:var(--porcelain)}
+.gateway-actions{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.gateway-actions{flex-direction:row;align-items:center}}
+.menu-rows li a{display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  border-top:1px solid rgba(248,247,243,.18);padding:16px 0;transition:border-color .3s}
+.menu-rows li:last-child a{border-bottom:1px solid rgba(248,247,243,.18)}
+.menu-rows li a:hover{border-top-color:rgba(248,247,243,.55)}
+.menu-rows .name{font-family:var(--serif);font-size:1.05rem;line-height:1.3;color:rgba(248,247,243,.9)}
+@media (min-width:640px){.menu-rows .name{font-size:1.15rem}}
+.menu-rows .dots{display:none;flex:1;border-bottom:1px dotted rgba(248,247,243,.2);padding-bottom:4px}
+@media (min-width:640px){.menu-rows .dots{display:block}}
+.menu-rows .right{display:flex;align-items:baseline;gap:16px;flex-shrink:0}
+.menu-rows .dur{display:none;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,247,243,.45)}
+@media (min-width:640px){.menu-rows .dur{display:inline}}
+.menu-rows .price{font-family:var(--serif);font-size:1.05rem;color:var(--sage)}
+.menu-note{margin-top:20px;font-size:.58rem;line-height:1.6;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(248,247,243,.4)}
+
+/* experience */
+.experience{background:var(--porcelain)}
+.experience .eyebrow{color:rgba(52,59,48,.6)}
+.experience h2{margin-top:26px;color:var(--olive)}
+.experience-copy{max-width:24rem;font-size:.93rem;line-height:1.8;color:rgba(39,40,36,.72)}
+.theme-grid{margin-top:56px;display:grid;gap:1px;background:rgba(52,59,48,.12)}
+@media (min-width:640px){.theme-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.theme-grid{grid-template-columns:repeat(3,1fr)}}
+.theme{background:var(--porcelain);padding:28px}
+@media (min-width:1024px){.theme{padding:36px}}
+.theme .label{font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(52,59,48,.45)}
+.theme p.body{margin-top:16px;font-family:var(--serif);font-size:1.18rem;line-height:1.5;color:var(--olive)}
+.experience-note{margin-top:32px;max-width:44rem;font-size:.7rem;line-height:1.7;color:rgba(39,40,36,.45)}
+
+/* final */
+.final{background:var(--espresso);color:var(--porcelain)}
+.final-grid{display:grid}
+@media (min-width:1024px){.final-grid{grid-template-columns:7fr 5fr}}
+.final-copy{padding:80px 22px}
+@media (min-width:640px){.final-copy{padding:96px 40px}}
+@media (min-width:1024px){.final-copy{padding:128px 48px}}
+@media (min-width:1280px){.final-copy{padding-left:64px;padding-right:64px}}
+.final .eyebrow{color:var(--sage)}
+.final h2{margin-top:26px;font-size:clamp(2.2rem,5.4vw,4.2rem)}
+.final-lede{margin-top:30px;max-width:28rem;font-size:.95rem;line-height:1.8;color:rgba(248,247,243,.65)}
+.final-actions{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.final-actions{flex-direction:row;align-items:center}}
+.final-facts{margin-top:52px;display:grid;gap:28px;border-top:1px solid rgba(248,247,243,.15);padding-top:30px}
+@media (min-width:640px){.final-facts{grid-template-columns:repeat(2,1fr)}}
+.final-facts dt{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sage)}
+.final-facts dd{margin-top:12px;font-size:.9rem;line-height:1.7;color:rgba(248,247,243,.7)}
+.final-media{position:relative;order:-1;height:42vh;min-height:300px;overflow:hidden}
+@media (min-width:1024px){.final-media{order:0;height:auto}}
+.final-media img{width:100%;height:100%;object-fit:cover}
+.final-media::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(37,36,31,.4),transparent)}
+
+/* treatments page */
+.treat-hero{background:var(--limestone);padding:112px 22px 56px}
+@media (min-width:640px){.treat-hero{padding:120px 40px 64px}}
+@media (min-width:1024px){.treat-hero{padding:144px 48px 64px}}
+.treat-hero .eyebrow{color:rgba(52,59,48,.6)}
+.treat-hero h1{margin-top:24px;color:var(--olive)}
+.treat-hero .side{display:flex;flex-direction:column;gap:16px}
+.treat-hero .side p{max-width:24rem;font-size:.94rem;line-height:1.8;color:rgba(39,40,36,.7)}
+.treat-hero .patch{border-left:2px solid rgba(52,59,48,.3);padding-left:16px;
+  font-size:.78rem;line-height:1.7;color:rgba(52,59,48,.8)}
+.treat-strip{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px;
+  border-top:1px solid var(--line);padding-top:24px;font-size:.58rem;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(52,59,48,.55)}
+.treat-strip a{margin-left:auto;color:var(--olive)}
+.treat-strip a:hover{text-decoration:underline}
+
+/* finder */
+.finder{background:var(--porcelain);border-top:1px solid rgba(52,59,48,.12);border-bottom:1px solid rgba(52,59,48,.12)}
+.finder .eyebrow{color:rgba(52,59,48,.6)}
+.finder h2{margin-top:22px;color:var(--olive)}
+.finder-lede{margin-top:22px;max-width:24rem;font-size:.9rem;line-height:1.7;color:rgba(39,40,36,.65)}
+.finder-ask{margin-top:26px;display:inline-block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(52,59,48,.6);border-bottom:1px solid rgba(52,59,48,.25);padding-bottom:3px}
+.finder-ask:hover{color:var(--olive)}
+.finder-options{display:grid;gap:1px;background:rgba(52,59,48,.12)}
+@media (min-width:640px){.finder-options{grid-template-columns:repeat(2,1fr)}}
+.finder-opt{padding:22px 20px;text-align:left;background:var(--porcelain);transition:background .3s}
+.finder-opt:hover{background:rgba(231,224,213,.6)}
+.finder-opt .lbl{display:block;font-family:var(--serif);font-size:1.2rem;line-height:1.3;color:var(--olive)}
+.finder-opt .blurb{display:block;margin-top:8px;font-size:.8rem;line-height:1.6;color:rgba(39,40,36,.62)}
+.finder-opt[aria-pressed="true"]{background:var(--olive)}
+.finder-opt[aria-pressed="true"] .lbl{color:var(--porcelain)}
+.finder-opt[aria-pressed="true"] .blurb{color:rgba(248,247,243,.72)}
+.finder-panel{margin-top:24px;border:1px solid rgba(52,59,48,.2);padding:24px}
+.finder-panel[hidden]{display:none}
+.finder-panel .count{font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(52,59,48,.5)}
+.finder-panel ul{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.finder-panel li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  font-size:.92rem;color:rgba(39,40,36,.8)}
+.finder-panel li .p{flex-shrink:0;font-size:.85rem;color:var(--olive)}
+.finder-panel .actions{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px}
+.finder-panel .fine{margin-top:20px;font-size:.72rem;line-height:1.7;color:rgba(39,40,36,.45)}
+
+/* menu */
+.menu-sec{background:var(--limestone);padding:72px 22px 80px}
+@media (min-width:640px){.menu-sec{padding:80px 40px 96px}}
+@media (min-width:1024px){.menu-sec{padding:96px 48px 112px}}
+.menu-top{display:flex;flex-direction:column;gap:24px}
+@media (min-width:1024px){.menu-top{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.menu-top .eyebrow{color:rgba(52,59,48,.55)}
+.menu-top h2{margin-top:18px;color:var(--olive)}
+.search-wrap{position:relative;width:100%}
+@media (min-width:1024px){.search-wrap{max-width:24rem}}
+.search-wrap svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:14px;height:14px;
+  color:rgba(52,59,48,.5);pointer-events:none}
+.search-wrap input{width:100%;height:48px;border:1px solid rgba(52,59,48,.25);background:transparent;
+  padding:0 44px;font-size:.86rem;color:var(--ink)}
+.search-wrap input::placeholder{color:rgba(39,40,36,.4)}
+.search-wrap input:focus{outline:none;border-color:var(--olive)}
+.search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;
+  display:none;align-items:center;justify-content:center;color:rgba(52,59,48,.6);font-size:.9rem}
+.search-clear.show{display:flex}
+.chip-row{margin-top:30px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line);padding-bottom:16px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chip-row::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;border:1px solid rgba(52,59,48,.2);padding:10px 16px;font-size:.56rem;
+  letter-spacing:.18em;text-transform:uppercase;color:rgba(52,59,48,.7);transition:.3s}
+.chip:hover{border-color:rgba(52,59,48,.5);color:var(--olive)}
+.chip[aria-pressed="true"]{background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.result-count{margin-top:18px;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(52,59,48,.45)}
+.tlist{margin-top:16px}
+.trow{border-top:1px solid var(--line);scroll-margin-top:112px}
+.tlist .tail{border-top:1px solid var(--line)}
+.trow-head{display:flex;align-items:flex-start;gap:16px;width:100%;padding:24px 0;text-align:left}
+@media (min-width:640px){.trow-head{gap:24px;padding:28px 0}}
+.trow-head .idx{display:none;margin-top:4px;width:24px;flex-shrink:0;font-size:.55rem;
+  letter-spacing:.24em;color:rgba(52,59,48,.4)}
+@media (min-width:640px){.trow-head .idx{display:block}}
+.trow-main{min-width:0;flex:1}
+.trow-cat{display:block;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(52,59,48,.45)}
+.trow-name{display:block;margin-top:8px;font-family:var(--serif);font-size:1.45rem;line-height:1.15;
+  color:var(--olive);transition:opacity .3s}
+@media (min-width:640px){.trow-name{font-size:1.85rem}}
+.trow-head:hover .trow-name{opacity:.7}
+.trow-inline{display:block;margin-top:8px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(39,40,36,.5)}
+@media (min-width:640px){.trow-inline{display:none}}
+.trow-price{display:none;flex-shrink:0;text-align:right}
+@media (min-width:640px){.trow-price{display:block}}
+.trow-price .dur{display:block;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(39,40,36,.45)}
+.trow-price .amt{display:block;margin-top:4px;font-family:var(--serif);font-size:1.3rem;line-height:1;color:var(--olive)}
+.toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;
+  margin-top:2px;border:1px solid rgba(52,59,48,.25);font-size:.9rem;color:rgba(52,59,48,.7);transition:.5s}
+.trow.open .toggle{transform:rotate(45deg);background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.panel{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s cubic-bezier(.22,1,.36,1),opacity .4s}
+.trow.open .panel{max-height:4000px;opacity:1}
+.panel-inner{display:grid;gap:32px;padding-bottom:40px}
+@media (min-width:1024px){.panel-inner{grid-template-columns:repeat(12,1fr);gap:40px}}
+@media (min-width:1024px){
+  .panel-body{grid-column:span 7}
+  .panel-aside{grid-column:9/span 4}
+}
+.panel .desc{max-width:34rem;font-size:.93rem;line-height:1.8;color:rgba(39,40,36,.78)}
+.panel .note{margin-top:20px;border-left:2px solid var(--olive);background:rgba(166,170,152,.16);
+  padding:12px 16px;font-size:.82rem;line-height:1.7;color:var(--olive)}
+.panel .block{margin-top:32px}
+.panel h3{font-family:var(--sans);font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(52,59,48,.55);font-weight:500}
+.bullets{margin-top:16px;display:grid;gap:8px 32px}
+@media (min-width:640px){.bullets{grid-template-columns:repeat(2,1fr)}}
+.bullets li{position:relative;padding-left:18px;font-size:.86rem;line-height:1.6;color:rgba(39,40,36,.72)}
+.bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:4px;height:4px;border-radius:999px;background:rgba(52,59,48,.5)}
+.qchips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.qchip{border:1px solid rgba(52,59,48,.2);padding:8px 12px;text-align:left;font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(52,59,48,.75);transition:.3s}
+.qchip:hover{background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.panel-actions{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.panel-aside .frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:rgba(166,170,152,.25)}
+.panel-aside img{width:100%;height:100%;object-fit:cover}
+.facts{margin-top:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.facts dt{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(52,59,48,.45)}
+.facts dd{margin-top:4px;font-size:.85rem;color:rgba(39,40,36,.72)}
+.empty{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:64px 0;text-align:center}
+.empty h3{font-size:1.5rem;color:var(--olive)}
+.empty p{margin:12px auto 0;max-width:26rem;font-size:.88rem;line-height:1.7;color:rgba(39,40,36,.6)}
+.empty .actions{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.treat-cta{background:var(--espresso);color:var(--porcelain);padding:64px 22px}
+@media (min-width:640px){.treat-cta{padding:72px 40px}}
+@media (min-width:1024px){.treat-cta{padding:80px 48px}}
+.treat-cta .inner{display:flex;flex-direction:column;gap:32px;max-width:1560px;margin:0 auto}
+@media (min-width:1024px){.treat-cta .inner{flex-direction:row;align-items:center;justify-content:space-between}}
+.treat-cta .eyebrow{color:var(--sage)}
+.treat-cta h2{margin-top:20px;font-size:clamp(1.9rem,4vw,3rem)}
+.treat-cta p{margin-top:16px;max-width:26rem;font-size:.9rem;line-height:1.7;color:rgba(248,247,243,.6)}
+.treat-cta .actions{display:flex;flex-direction:column;gap:12px}
+@media (min-width:640px){.treat-cta .actions{flex-direction:row}}
+
+/* footer */
+.site-footer{position:relative;overflow:hidden;background:var(--espresso);color:var(--porcelain);
+  padding:80px 22px 40px}
+@media (min-width:640px){.site-footer{padding:96px 40px 40px}}
+@media (min-width:1024px){.site-footer{padding:112px 48px 40px}}
+.footer-top{display:grid;gap:48px;border-bottom:1px solid rgba(248,247,243,.15);padding-bottom:56px}
+@media (min-width:1024px){.footer-top{grid-template-columns:repeat(12,1fr);gap:40px}}
+.footer-brand .eyebrow{color:var(--sage)}
+.footer-word{margin-top:22px;font-family:var(--serif);font-size:2.6rem;line-height:.95;letter-spacing:-.01em}
+@media (min-width:640px){.footer-word{font-size:3.3rem}}
+.footer-word span{display:block;margin-top:8px;font-family:var(--sans);font-size:.62rem;
+  letter-spacing:.52em;text-transform:uppercase;color:rgba(248,247,243,.55)}
+.footer-brand .blurb{margin-top:28px;max-width:22rem;font-size:.95rem;line-height:1.8;color:rgba(248,247,243,.65)}
+.footer-col h2{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--sage);font-weight:500}
+.footer-col ul{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.footer-col a,.footer-col address{font-size:.9rem;font-style:normal;line-height:1.7;color:rgba(248,247,243,.7);transition:color .3s}
+.footer-col a:hover{color:var(--porcelain)}
+@media (min-width:1024px){
+  .footer-brand{grid-column:span 5}
+  .footer-col.treat{grid-column:span 2}
+  .footer-col.clinic-col{grid-column:span 2}
+  .footer-col.visit{grid-column:span 3}
+}
+.footer-visit-actions{margin-top:22px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.footer-visit-actions .btn{width:100%}
+.footer-visit-actions .fb{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,247,243,.65)}
+.footer-visit-actions .fb:hover{color:var(--porcelain)}
+.footer-base{display:grid;gap:24px;padding-top:28px;font-size:.7rem;line-height:1.7;color:rgba(248,247,243,.4)}
+@media (min-width:1024px){.footer-base{grid-template-columns:repeat(12,1fr)}}
+.footer-base .meta{display:flex;flex-wrap:wrap;gap:8px 24px}
+@media (min-width:1024px){
+  .footer-base .legal{grid-column:span 7}
+  .footer-base .meta{grid-column:span 5;justify-content:flex-end}
+}
+.footer-ghost{margin-top:56px;text-align:center;font-family:var(--serif);font-size:16vw;line-height:.75;
+  color:rgba(248,247,243,.05);white-space:nowrap;user-select:none;pointer-events:none}
+
+/* floating book */
+.floating-book{position:fixed;right:16px;bottom:16px;z-index:55;display:none;align-items:center;gap:10px;
+  background:var(--porcelain);color:var(--olive);border:1px solid rgba(52,59,48,.2);padding:12px 18px;
+  font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;
+  box-shadow:0 18px 40px -28px rgba(37,36,31,.9);transition:.4s}
+.floating-book.show{display:inline-flex}
+@media (min-width:768px){.floating-book{left:24px;right:auto;bottom:24px}}
+.floating-book:hover{background:var(--olive);color:var(--porcelain);border-color:var(--olive)}
+
+/* concierge */
+.concierge-launch{position:fixed;right:16px;bottom:16px;z-index:65;display:flex;align-items:center;gap:12px;
+  background:var(--olive);color:var(--porcelain);padding:15px 20px;
+  box-shadow:0 18px 40px -24px rgba(37,36,31,.9);transition:background .4s}
+@media (min-width:640px){.concierge-launch{right:24px;bottom:24px}}
+.concierge-launch:hover{background:var(--espresso)}
+.concierge-launch .dot{position:relative;display:inline-flex;width:6px;height:6px}
+.concierge-launch .dot::before{content:'';position:absolute;inset:0;border-radius:999px;
+  background:var(--sage);animation:hscPing 2s cubic-bezier(0,0,.2,1) infinite;opacity:.7}
+.concierge-launch .dot::after{content:'';position:relative;display:block;width:6px;height:6px;
+  border-radius:999px;background:var(--sage)}
+@keyframes hscPing{75%,100%{transform:scale(2.4);opacity:0}}
+.concierge-launch span:last-child{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase}
+.concierge{position:fixed;z-index:70;left:12px;right:12px;bottom:12px;display:none;flex-direction:column;
+  height:84vh;max-height:660px;overflow:hidden;background:var(--porcelain);
+  border:1px solid rgba(52,59,48,.15);box-shadow:0 40px 100px -50px rgba(37,36,31,.75)}
+.concierge.open{display:flex}
+@media (min-width:640px){.concierge{left:auto;right:24px;bottom:24px;width:406px;height:610px}}
+.cc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+  background:var(--espresso);color:var(--porcelain);padding:16px 20px}
+.cc-head h2{font-family:var(--serif);font-size:1.05rem;line-height:1;letter-spacing:.05em;font-weight:400}
+.cc-head .sub{margin-top:8px;font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(248,247,243,.45)}
+.cc-head-actions{display:flex;align-items:center;gap:12px;padding-top:4px}
+.cc-reset{font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,247,243,.45)}
+.cc-reset:hover{color:var(--porcelain)}
+.cc-close{display:flex;align-items:center;justify-content:center;width:28px;height:28px;
+  border:1px solid rgba(248,247,243,.25);color:rgba(248,247,243,.7);transition:.3s}
+.cc-close:hover{border-color:var(--porcelain);color:var(--porcelain)}
+.cc-scroll{flex:1;overflow-y:auto;padding:24px 20px;background:rgba(231,224,213,.45);
+  display:flex;flex-direction:column;gap:20px}
+.cc-msg{display:flex}
+.cc-msg.user{justify-content:flex-end}
+.cc-bubble{max-width:92%;border:1px solid rgba(52,59,48,.12);background:var(--porcelain);padding:16px}
+.cc-msg.user .cc-bubble{max-width:85%;background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.cc-bubble p{white-space:pre-line;font-size:.87rem;line-height:1.7;color:rgba(39,40,36,.88)}
+.cc-msg.user .cc-bubble p{color:var(--porcelain)}
+.cc-links{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.cc-link{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(52,59,48,.25);
+  padding:8px 12px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);transition:.3s}
+.cc-link:hover{background:var(--olive);color:var(--porcelain)}
+.cc-typing{display:flex;align-items:center;gap:6px;border:1px solid rgba(52,59,48,.12);
+  background:var(--porcelain);padding:14px 16px;width:fit-content}
+.cc-typing i{width:4px;height:4px;border-radius:999px;background:rgba(52,59,48,.6);animation:hscBlink 1.1s infinite}
+.cc-typing i:nth-child(2){animation-delay:.16s}
+.cc-typing i:nth-child(3){animation-delay:.32s}
+@keyframes hscBlink{0%,100%{opacity:.25}50%{opacity:1}}
+.cc-foot{border-top:1px solid rgba(52,59,48,.12);background:var(--porcelain);padding:12px 16px 16px}
+.cc-chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
+.cc-chips::-webkit-scrollbar{display:none}
+.cc-chip{flex-shrink:0;border:1px solid rgba(52,59,48,.2);padding:8px 12px;font-size:.54rem;
+  letter-spacing:.16em;text-transform:uppercase;color:rgba(52,59,48,.8);transition:.3s}
+.cc-chip:hover{background:var(--olive);border-color:var(--olive);color:var(--porcelain)}
+.cc-form{display:flex;align-items:stretch;gap:8px}
+.cc-form input{flex:1;height:44px;border:1px solid rgba(52,59,48,.2);background:transparent;
+  padding:0 12px;font-size:.83rem}
+.cc-form input::placeholder{color:rgba(39,40,36,.4)}
+.cc-form input:focus{outline:none;border-color:var(--olive)}
+.cc-form button{height:44px;flex-shrink:0;background:var(--olive);color:var(--porcelain);
+  padding:0 16px;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;transition:.3s}
+.cc-form button:hover{background:var(--espresso)}
+.cc-note{margin-top:12px;font-size:.52rem;line-height:1.6;color:rgba(39,40,36,.42)}
+.cc-note a{color:var(--olive);border-bottom:1px solid rgba(52,59,48,.3);text-transform:uppercase;
+  letter-spacing:.18em;font-size:.52rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);
+  transition:opacity .95s cubic-bezier(.22,1,.36,1),transform .95s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="is-loading">
+
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading Harwood Skin Clinic">
+  <div class="loader-glow" aria-hidden="true"></div>
+  <div class="loader-inner">
+    <span class="loader-rule" aria-hidden="true"></span>
+    <h1 class="loader-word">HARWOOD</h1>
+    <p class="loader-sub">Skin Clinic</p>
+    <div class="loader-track" aria-hidden="true"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-place">Bolton · United Kingdom</p>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="wordmark" href="#/" aria-label="Harwood Skin Clinic — home">
+      <span class="wm-main">HARWOOD</span>
+      <span class="wm-sub">Skin Clinic</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#/treatments">Treatments</a>
+      <a href="#clinic">The Clinic</a>
+      <a href="#natasha">Natasha</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-book" data-booking href="#" target="_blank" rel="noopener noreferrer">Book</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-top">
+    <a class="wordmark" href="#/" data-close-menu>
+      <span class="wm-main">HARWOOD</span>
+      <span class="wm-sub">Skin Clinic</span>
+    </a>
+    <button class="mm-close" id="menuClose" aria-label="Close menu">Close</button>
+  </div>
+  <nav class="mm-nav" aria-label="Mobile">
+    <a href="#/treatments" data-close-menu>Treatments</a>
+    <a href="#clinic" data-close-menu>The Clinic</a>
+    <a href="#natasha" data-close-menu>Natasha</a>
+    <a href="#approach" data-close-menu>Our Approach</a>
+    <a href="#experience" data-close-menu>Experience</a>
+  </nav>
+  <div class="mm-foot">
+    <a class="btn btn-light" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment</a>
+    <div class="mm-row">
+      <span>Rose Lea, Bolton</span>
+      <a data-facebook href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div id="view-home">
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <i aria-hidden="true"></i>
+            <p class="eyebrow">Private skin clinic</p>
+          </div>
+          <h1 class="display d1" id="hero-heading">YOUR SKIN,<br />IN EXPERT<br /><em>HANDS.</em></h1>
+          <p class="lede">Thoughtful skin treatments, professional experience and a personalised approach to your skin journey.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#/treatments">Explore treatments</a>
+            <a class="btn btn-outline" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment</a>
+          </div>
+          <div class="hero-meta">
+            <div>
+              <p class="tiny">Bolton · United Kingdom</p>
+              <p class="tiny">Rose Lea, Bolton · BL2</p>
+            </div>
+            <a class="hero-scroll" href="#statement">
+              <i aria-hidden="true">↓</i>
+              <span class="tiny">Scroll</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/50c45ea5e_generated_11dea2cb.png"
+               alt="Editorial portrait of a woman with natural, luminous skin in soft daylight" />
+          <div class="hero-caption">
+            <p>Clinical expertise. Personal care. Confident skin.</p>
+            <p class="est">Est. Bolton</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec statement" id="statement" aria-labelledby="statement-heading">
+      <div class="wrap">
+        <div class="g12">
+          <div class="s7 reveal">
+            <p class="eyebrow">The Harwood standard</p>
+            <h2 class="display d2" id="statement-heading">MORE THAN A TREATMENT.<br /><em>A more considered experience.</em></h2>
+          </div>
+          <div class="statement-copy s4 from9 reveal">
+            <p>Harwood Skin Clinic was built around a simple idea: that expert skin care and genuine comfort should never be a choice between one or the other.</p>
+            <p>Every appointment begins with a proper conversation. Every treatment is delivered with clinical care, unhurried attention and a room that feels calm the moment you walk in.</p>
+            <p class="sign">Clinical expertise. Personal care. Confident skin.</p>
+          </div>
+        </div>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <p class="n">01</p>
+            <h3>One client at a time</h3>
+            <p>A private room, a closed door and an hour that belongs to you — never a busy, overlapping diary.</p>
+          </div>
+          <div class="pillar reveal">
+            <p class="n">02</p>
+            <h3>Clinical standards</h3>
+            <p>Fifteen years of NHS clinical practice behind the hygiene, precision and aftercare of every treatment.</p>
+          </div>
+          <div class="pillar reveal">
+            <p class="n">03</p>
+            <h3>A plan made for you</h3>
+            <p>Products and techniques are chosen for your skin on the day, not lifted from a set menu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec natasha" id="natasha" aria-labelledby="natasha-heading">
+      <div class="wrap">
+        <div class="g12 wide-gap">
+          <div class="s5 reveal">
+            <figure>
+              <div class="natasha-img">
+                <img src="https://media.base44.com/images/public/user_6aedab08f4e257fc74b71a92/b8bc25692_44651.jpg"
+                     alt="Natasha Snape, founder of Harwood Skin Clinic, holding a Clinicare professional skincare brochure inside the clinic"
+                     style="object-position:55% center" loading="lazy" />
+              </div>
+              <figcaption><span>Natasha Snape · Founder</span><span>Harwood Skin Clinic</span></figcaption>
+            </figure>
+          </div>
+          <div class="s6 from7 natasha-copy reveal">
+            <p class="eyebrow">The founder</p>
+            <h2 class="display d2" id="natasha-heading">MEET<br />NATASHA SNAPE.</h2>
+            <div class="natasha-body">
+              <p>Before Harwood Skin Clinic, Natasha spent fifteen years working as an NHS Dental Therapist. That period shaped everything about how she works today — a clinical regard for hygiene, a precise hand, an understanding of anatomy and a naturally reassuring way with people who might be nervous.</p>
+              <p>She opened her own private clinic in Bolton to bring that same standard into skin care: unhurried consultations, treatments chosen for your skin on the day, and a room that feels nothing like a hospital and nothing like a salon.</p>
+            </div>
+            <div class="natasha-stats">
+              <div>
+                <p class="big">15</p>
+                <p class="cap">Years as an NHS Dental Therapist</p>
+              </div>
+              <p class="say">Clinical precision, genuine warmth and a treatment plan that begins with listening.</p>
+            </div>
+            <div class="natasha-actions">
+              <a class="btn btn-solid" href="#clinic">Discover the clinic</a>
+              <a class="btn btn-outline" data-booking href="#" target="_blank" rel="noopener noreferrer">Book with Natasha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec signature" aria-labelledby="signature-heading">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="reveal">
+            <p class="eyebrow">Signature treatments</p>
+            <h2 class="display d2" id="signature-heading">FOUR WAYS TO BEGIN,<br /><em>each considered.</em></h2>
+          </div>
+          <a class="menu-link link-underline" href="#/treatments">Full treatment menu</a>
+        </div>
+        <div class="card-grid" id="signatureGrid"></div>
+      </div>
+    </section>
+
+    <section class="sec clinic" id="clinic" aria-labelledby="clinic-heading">
+      <div class="wrap">
+        <div class="g12">
+          <div class="s7 reveal">
+            <p class="eyebrow">The space</p>
+            <h2 class="display d2" id="clinic-heading">A ROOM BUILT<br /><em>for quiet.</em></h2>
+          </div>
+          <div class="clinic-copy s4 from9 reveal">
+            <p>Hand-finished plaster walls, warm oak laid in herringbone and daylight falling through the skylight onto the treatment bed. Everything in the room was chosen to lower the pulse.</p>
+            <p>Spotless, private and genuinely calm — with the heated cloud bed clients talk about long after they leave.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gfig g8 r1611 reveal">
+            <div class="frame">
+              <img src="https://media.base44.com/images/public/user_6aedab08f4e257fc74b71a92/4ae76bf5f_Screenshot_20261106_150708_Facebook.jpg"
+                   alt="The treatment room at Harwood Skin Clinic with a skylight, treatment bed and herringbone oak floor" loading="lazy" />
+            </div>
+            <figcaption>The treatment room · skylight and cloud bed</figcaption>
+          </figure>
+          <figure class="gfig g4 r45 reveal">
+            <div class="frame">
+              <img src="https://media.base44.com/images/public/user_6aedab08f4e257fc74b71a92/4197c82c1_Screenshot_20261106_151207_Instagram.jpg"
+                   alt="The arched niche with warm backlighting and the Harwood monogram inside the clinic"
+                   style="object-position:45% center" loading="lazy" />
+            </div>
+            <figcaption>The arched niche · warm light</figcaption>
+          </figure>
+          <figure class="gfig g5 r43 reveal">
+            <div class="frame">
+              <img src="https://media.base44.com/images/public/user_6aedab08f4e257fc74b71a92/da32e24f7_Screenshot_20261106_151131_Google.jpg"
+                   alt="Display alcove with professional certification, skincare bottles and warm shelving" loading="lazy" />
+            </div>
+            <figcaption>Professional skincare · on display</figcaption>
+          </figure>
+          <figure class="gfig g7 r1610 reveal">
+            <div class="frame">
+              <img src="https://media.base44.com/images/public/user_6aedab08f4e257fc74b71a92/3d84ea875_Screenshot_20261106_151121_Google.jpg"
+                   alt="Detail of the clinic interior — plaster walls, oak flooring and brushed hardware" loading="lazy" />
+            </div>
+            <figcaption>Detail · plaster, oak and black metalwork</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Photographed at the clinic · Rose Lea, Bolton</p>
+      </div>
+    </section>
+
+    <section class="sec approach" id="approach" aria-labelledby="approach-heading">
+      <div class="wrap">
+        <div class="g12 wide-gap">
+          <div class="s4 reveal approach-aside">
+            <p class="eyebrow">The Harwood approach</p>
+            <h2 class="display d3" id="approach-heading">HOW EVERY<br />APPOINTMENT<br /><em>is held.</em></h2>
+            <p class="approach-lede">Five things that shape the hour you spend here — before, during and after treatment.</p>
+          </div>
+          <div class="s7 from6">
+            <ol class="approach-list" id="approachList"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec gateway" aria-labelledby="gateway-heading">
+      <div class="wrap">
+        <div class="g12 wide-gap">
+          <div class="s5 reveal">
+            <p class="eyebrow">Treatment discovery</p>
+            <h2 class="display d2" id="gateway-heading">EIGHT TREATMENTS.<br /><em>One considered approach.</em></h2>
+            <p class="gateway-lede">Every price and duration is listed openly. Search the menu, filter by treatment area, or ask the concierge for anything you would like explained.</p>
+            <div class="cat-chips" id="gatewayChips"></div>
+            <div class="gateway-actions">
+              <a class="btn btn-cream" href="#/treatments">View all treatments</a>
+              <a class="btn btn-light" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment</a>
+            </div>
+          </div>
+          <div class="s6 from7 reveal">
+            <ul class="menu-rows" id="gatewayList"></ul>
+            <p class="menu-note">Patch test required before a chemical peel · suitability assessed in consultation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec experience" id="experience" aria-labelledby="experience-heading">
+      <div class="wrap">
+        <div class="g12">
+          <div class="s7 reveal">
+            <p class="eyebrow">Client experience</p>
+            <h2 class="display d2" id="experience-heading">EXPERIENCE CARE<br /><em>that feels different.</em></h2>
+          </div>
+          <p class="experience-copy s4 from9 reveal">The themes below summarise what clients share after their appointments at the clinic. They are summaries of feedback, not verbatim quotations.</p>
+        </div>
+        <div class="theme-grid" id="themeGrid"></div>
+        <p class="experience-note">Verified client reviews will be published here as they are confirmed. Harwood Skin Clinic does not publish names, ratings or reviews that cannot be verified.</p>
+      </div>
+    </section>
+
+    <section class="final" aria-labelledby="final-heading">
+      <div class="final-grid">
+        <div class="final-copy reveal">
+          <p class="eyebrow">Begin</p>
+          <h2 class="display" id="final-heading">YOUR SKIN<br />JOURNEY<br /><em>starts here.</em></h2>
+          <p class="final-lede">Choose your treatment, find a time that suits you and Natasha will take it from there. Every appointment begins with a conversation.</p>
+          <div class="final-actions">
+            <a class="btn btn-cream" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment</a>
+            <a class="btn btn-light" data-facebook href="#" target="_blank" rel="noopener noreferrer">Message the clinic</a>
+          </div>
+          <dl class="final-facts">
+            <div>
+              <dt>The clinic</dt>
+              <dd>Rose Lea, Bolton, United Kingdom, BL2</dd>
+            </div>
+            <div>
+              <dt>Booking</dt>
+              <dd>Online through Goldie — availability and confirmation appear there.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="final-media">
+          <img src="https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/9dc5666f9_generated_dea897cd.png"
+               alt="Treatment tray with folded linen, glass droppers and ice globes at Harwood Skin Clinic" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="view-treatments" hidden></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="eyebrow">Private skin clinic · Bolton</p>
+        <p class="footer-word">HARWOOD<span>Skin Clinic</span></p>
+        <p class="blurb">Clinical expertise. Personal care. Confident skin. A private skin clinic in Bolton, founded by Natasha Snape.</p>
+      </div>
+      <div class="footer-col treat">
+        <h2>Treatments</h2>
+        <ul>
+          <li><a href="#/treatments?category=Microneedling">Microneedling</a></li>
+          <li><a href="#/treatments?category=Chemical%20Peels">Chemical Peels</a></li>
+          <li><a href="#/treatments?category=Signature%20Glass%20Skin">Signature Glass Skin</a></li>
+          <li><a href="#/treatments?category=Facials">Facials</a></li>
+          <li><a href="#/treatments?category=Packages">Packages</a></li>
+          <li><a href="#/treatments?category=Consultation">Consultation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col clinic-col">
+        <h2>The Clinic</h2>
+        <ul>
+          <li><a href="#natasha">Meet Natasha</a></li>
+          <li><a href="#clinic">The Clinic</a></li>
+          <li><a href="#approach">Our Approach</a></li>
+          <li><a href="#experience">Client Experience</a></li>
+        </ul>
+      </div>
+      <div class="footer-col visit">
+        <h2>Visit &amp; book</h2>
+        <address>Rose Lea, Bolton<br />Bolton, BL2<br />United Kingdom</address>
+        <div class="footer-visit-actions">
+          <a class="btn btn-light" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment</a>
+          <a class="fb link-underline" data-facebook href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p class="legal">A patch test is required before a chemical peel — Natasha will contact you to arrange it. Treatment suitability is always assessed individually. Appointments are confirmed through the clinic’s booking page only.</p>
+      <div class="meta">
+        <span>© <span id="year">2026</span> Harwood Skin Clinic</span>
+        <span>·</span>
+        <span>Digital flagship by SB Studio</span>
+      </div>
+    </div>
+  </div>
+  <p class="footer-ghost" aria-hidden="true">HARWOOD</p>
+</footer>
+
+<a class="floating-book" id="floatingBook" data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment →</a>
+
+<button class="concierge-launch" id="conciergeLaunch" aria-expanded="false" aria-controls="concierge" aria-label="Open the Harwood Concierge">
+  <span class="dot" aria-hidden="true"></span>
+  <span>Concierge</span>
+</button>
+
+<div class="concierge" id="concierge" role="dialog" aria-label="The Harwood Concierge">
+  <div class="cc-head">
+    <div>
+      <h2>THE HARWOOD CONCIERGE</h2>
+      <p class="sub">Website FAQ assistant · Bolton</p>
+    </div>
+    <div class="cc-head-actions">
+      <button class="cc-reset" id="ccReset" type="button">Reset</button>
+      <button class="cc-close" id="ccClose" type="button" aria-label="Close concierge">✕</button>
+    </div>
+  </div>
+  <div class="cc-scroll" id="ccScroll" aria-live="polite"></div>
+  <div class="cc-foot">
+    <div class="cc-chips" id="ccChips"></div>
+    <form class="cc-form" id="ccForm">
+      <label class="sr-only" for="ccInput">Ask the concierge a question</label>
+      <input id="ccInput" autocomplete="off" placeholder="Ask about treatments, prices, booking…" />
+      <button type="submit">Send</button>
+    </form>
+    <p class="cc-note">A website FAQ concierge — not a live AI model. Answers use the clinic’s own information only. <a data-booking href="#" target="_blank" rel="noopener noreferrer">Book</a></p>
+  </div>
+</div>
+
+<script>
+/* ---------------------------------------------------------------
+   1. CLINIC DATA
+   --------------------------------------------------------------- */
+var BOOKING_URL = 'https://book.heygoldie.com/the-harwood-skin-clinic/checkout?fbclid=IwVERDUAVahltleHRuA2FlbQIxMABwZG9mAXNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABH0D_dLLsW6AF-7Wq0LUBncx0xHjUpgi30s17aZBLnnvdCm8RWzklX03i1Ir0_aem_f1WDuDVBvBrfxHKhRTIZTg';
+var FACEBOOK_URL = 'https://www.facebook.com/share/18oXiydeyc/';
+
+var IMG = {
+  texture: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/e55ea88d6_generated_24a2341e.png',
+  microneedling: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/6051ac814_generated_560512c4.png',
+  chemicalPeel: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/7a58c5041_generated_47101a54.png',
+  glassSkin: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/aae9b8c1d_generated_f5ad457f.png',
+  luxuryFacial: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/56c5dd6b0_generated_9edc16a2.png',
+  tray: 'https://media.base44.com/images/public/6aedab8ce14e3dd71d69f054/9dc5666f9_generated_dea897cd.png'
+};
+
+var CATEGORIES = ['All Treatments', 'Microneedling', 'Chemical Peels', 'Signature Glass Skin', 'Facials', 'Packages', 'Consultation'];
+
+var CLEANSE_PREP = ['Double cleanse', 'Enzyme peel', 'Extractions if required', 'Targeted microneedling serum', 'Microneedling', 'Cooling sheet mask', 'Ice globes', 'Moisturiser and SPF'];
+
+var TREATMENTS = [
+  { id: 'microneedling-face', name: 'Microneedling — Face Only', shortName: 'Microneedling', category: 'Microneedling',
+    duration: '1 hour', price: '£65', image: IMG.microneedling,
+    summary: 'Controlled micro-injuries to encourage the skin’s own collagen and elastin production.',
+    description: 'Microneedling for the face helps improve the appearance of fine lines, wrinkles, acne scarring and skin texture. Tiny needles create controlled micro-injuries, stimulating the skin’s natural healing process and collagen and elastin production.',
+    included: CLEANSE_PREP,
+    keywords: ['microneedling face only', 'face only microneedling', 'microneedling face', 'face only', 'needling', 'acne scarring', 'collagen', 'texture'],
+    faq: ['How much is face-only microneedling?', 'How long does microneedling take?'] },
+
+  { id: 'microneedling-face-neck-decolletage', name: 'Microneedling — Face, Neck & Décolletage', shortName: 'Face, Neck & Décolletage', category: 'Microneedling',
+    duration: '1 hour 15 minutes', price: '£80', image: IMG.texture,
+    summary: 'The same considered technique, extended across the face, neck and décolletage.',
+    description: 'Microneedling for the face, neck and décolletage helps improve the appearance of fine lines, wrinkles, acne scarring and skin texture by creating controlled micro-injuries that stimulate the skin’s natural collagen and elastin production.',
+    included: CLEANSE_PREP,
+    keywords: ['face neck and decolletage', 'face neck decolletage', 'neck and decolletage', 'decolletage', 'face and neck', 'neck', 'microneedling neck'],
+    faq: ['How much is face, neck and décolletage microneedling?', 'What is included in microneedling?'] },
+
+  { id: 'chemical-peel', name: 'Chemical Peel', shortName: 'Chemical Peel', category: 'Chemical Peels',
+    duration: '1 hour', price: '£65', image: IMG.chemicalPeel,
+    summary: 'Acid-based exfoliation for congestion, pigmentation, dullness and uneven tone.',
+    description: 'Chemical peels use acids to address concerns such as acne, enlarged pores, ageing, hyperpigmentation, dullness, uneven skin tone and scarring.',
+    note: 'A patch test is required. Natasha will contact you to arrange it.',
+    included: ['Double cleanse', 'Peel', 'Soothing mask', 'Ice globes', 'Serums', 'Moisturiser and SPF'],
+    keywords: ['chemical peel', 'chemical peels', 'peel', 'peels', 'hyperpigmentation', 'pigmentation', 'uneven skin tone', 'enlarged pores', 'dullness', 'patch test'],
+    faq: ['Is a patch test required?', 'How much is the chemical peel?'] },
+
+  { id: 'signature-glass-skin', name: 'Signature Glass Skin', shortName: 'Signature Glass Skin', category: 'Signature Glass Skin',
+    duration: '1 hour', price: '£55', image: IMG.glassSkin,
+    summary: 'Gentle exfoliation for a fresh, radiant glow and a smooth canvas for makeup.',
+    description: 'Signature Glass Skin reveals a fresh, radiant glow through gentle exfoliation, creating a smooth, refreshed-looking canvas for makeup. Dermaplaning and/or enzyme peel are chosen based on skin barrier health.',
+    included: ['Double cleanse', 'Steam', 'Extractions if needed', 'Dermaplane with enzyme peel', 'Appropriate mask', 'Ice globes', 'Serums', 'Facial massage', 'Moisturiser and SPF'],
+    keywords: ['glass skin', 'signature glass skin', 'dermaplaning', 'dermaplane', 'glow', 'radiant', 'makeup canvas', 'peach fuzz'],
+    faq: ['What is included in glass skin?', 'How much is Glass Skin?'] },
+
+  { id: 'luxury-facial', name: 'Luxury Facial', shortName: 'Luxury Facial', category: 'Facials',
+    duration: '45 minutes', price: '£45', image: IMG.luxuryFacial,
+    summary: 'A relaxing facial without a specific treatment focus.',
+    description: 'Perfect for those seeking a relaxing facial without a specific treatment focus.',
+    included: ['Double cleanse', 'Steam', 'Mask', 'Ice globes', 'Serums', 'Soothing facial massage'],
+    keywords: ['luxury facial', 'relaxing facial', 'facial', 'facials', 'massage', 'relaxation', 'pamper'],
+    faq: ['What is included in the Luxury Facial?', 'How long does a facial take?'] },
+
+  { id: 'bio-repeel-microneedling', name: 'Bio RePeel × Microneedling', shortName: 'Bio RePeel × Microneedling', category: 'Packages',
+    duration: '1 hour 15 minutes', price: '£90', image: IMG.tray,
+    summary: 'A chemical peel and microneedling combined into one refined treatment.',
+    description: 'The perfect package combining a chemical peel and microneedling for an enhanced skin treatment experience. Both treatments target similar skin concerns and are combined for skin refinement.',
+    included: [],
+    keywords: ['bio repeel microneedling', 'bio repeel', 'repeel', 'peel and microneedling', 'microneedling and peel', 'package', 'packages', 'combined'],
+    faq: ['What is Bio RePeel X Microneedling?', 'How much are the packages?'] },
+
+  { id: 'dermaplane-microneedling', name: 'Dermaplane × Microneedling', shortName: 'Dermaplane × Microneedling', category: 'Packages',
+    duration: '1 hour 15 minutes', price: '£75', image: IMG.microneedling,
+    summary: 'Dermaplaning paired with microneedling for smoother, brighter-looking skin.',
+    description: 'Dermaplaning is a non-invasive treatment that gently exfoliates to remove peach fuzz and dead skin cells, pairing with microneedling for smoother, brighter-looking and refreshed skin.',
+    included: [],
+    keywords: ['dermaplane microneedling', 'dermaplaning and microneedling', 'dermaplane package', 'dermaplaning', 'package', 'packages'],
+    faq: ['What is Dermaplane X Microneedling?', 'How much are the packages?'] },
+
+  { id: 'consultation', name: 'Consultation', shortName: 'Consultation', category: 'Consultation',
+    duration: '1 hour', price: '£130', image: IMG.texture,
+    summary: 'A full hour with Natasha to talk through your skin, your concerns and your options.',
+    description: 'A dedicated one-hour consultation with Natasha to discuss your skin concerns, your history and the treatment options that may suit you. Suitability is always assessed individually in person.',
+    included: [],
+    keywords: ['consultation', 'consult', 'appointment to discuss', 'skin analysis', 'advice'],
+    faq: ['What is the consultation price?', 'Who is Natasha?'] }
+];
+
+var APPROACH = [
+  { title: 'Safe and trusted hands', body: 'Fifteen years in NHS dentistry shaped a discipline for hygiene, precision and doing things properly — every time, without shortcuts.' },
+  { title: 'Detailed consultations', body: 'We start with your history, your skin and what you actually want, before a single product is chosen.' },
+  { title: 'Comfort and gentle technique', body: 'Treatments are paced to you. Warmth, quiet and a considered touch are part of the treatment, not an extra.' },
+  { title: 'Professional, reassuring communication', body: 'You will always know what is happening, why it is happening and what to expect afterwards.' },
+  { title: 'Personal attention', body: 'One practitioner, one room, one client at a time. Your plan is yours alone.' }
+];
+
+var EXPERIENCE_THEMES = [
+  { label: 'The results', body: 'Clients report their skin looking amazing, soft, refreshed and glowing after treatments such as Signature Glass Skin.' },
+  { label: 'The atmosphere', body: 'The clinic is described as luxurious, peaceful and calming — a private space rather than a busy salon.' },
+  { label: 'The little things', body: 'The heated cloud bed is one of the details clients mention most often, along with the natural light from the skylights.' },
+  { label: 'The environment', body: 'Interiors are described as immaculately clean, calm and light-filled, finished in warm plaster and black detailing.' },
+  { label: 'Natasha', body: 'Welcoming and reassuring, with the knowledge, communication and gentle approach clients value most.' },
+  { label: 'Feeling looked after', body: 'Detailed consultation, being listened to, and feeling safe and comfortable throughout are recurring themes.' }
+];
+
+function byId(id) {
+  for (var i = 0; i < TREATMENTS.length; i++) if (TREATMENTS[i].id === id) return TREATMENTS[i];
+  return undefined;
+}
+function esc(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* ---------------------------------------------------------------
+   2. CONCIERGE — local FAQ engine, no API and no key
+   --------------------------------------------------------------- */
+var SUITABILITY = "Treatment suitability is individual. Natasha can discuss your concerns and assess the appropriate options during a professional consultation. Please use the clinic's booking page to enquire.";
+var FALLBACK = "I don't have confirmed information about that just yet. Natasha will be happy to help. You can visit the clinic's booking page for further information.";
+var BOOK_CTA = { label: 'Book your appointment', href: BOOKING_URL };
+var MENU_CTA = { label: 'View the full treatment menu', to: '#/treatments' };
+var WELCOME = "Welcome to Harwood Skin Clinic. I'm your virtual clinic concierge. I can help you explore treatments, view prices and understand how to book. What would you like to know?";
+var QUICK_QUESTIONS = ['Explore All Treatments', 'View Prices', 'Microneedling', 'Chemical Peels', 'Signature Glass Skin', 'Luxury Facial', 'Treatment Packages', 'Meet Natasha', 'How Do I Book?'];
+
+var ALIASES = {
+  'microneedling-face': ['microneedling face only', 'face only microneedling', 'microneedling for the face', 'microneedling face', 'face only'],
+  'microneedling-face-neck-decolletage': ['microneedling face neck decolletage', 'face neck and decolletage', 'face neck decolletage', 'neck and decolletage', 'face and neck', 'decolletage', 'neck'],
+  'chemical-peel': ['chemical peel', 'chemical peels', 'the peel', 'peels', 'peel'],
+  'signature-glass-skin': ['signature glass skin', 'glass skin facial', 'glass skin', 'dermaplaning facial', 'dermaplaning', 'glow facial'],
+  'luxury-facial': ['luxury facial', 'relaxing facial', 'a facial', 'facial', 'facials'],
+  'bio-repeel-microneedling': ['bio repeel microneedling', 'bio repeel', 'repeel', 'peel and microneedling', 'microneedling and peel'],
+  'dermaplane-microneedling': ['dermaplane microneedling', 'dermaplaning and microneedling', 'dermaplaning package'],
+  'consultation': ['consultation', 'consult', 'skin consultation', 'skin analysis']
+};
+
+function norm(raw) {
+  return ' ' + String(raw || '').toLowerCase()
+    .replace(/[’']/g, '')
+    .replace(/[^a-z0-9£\s-]/g, ' ')
+    .replace(/micro[\s-]*needl\w*/g, 'microneedling')
+    .replace(/needleing|needling/g, 'microneedling')
+    .replace(/derma[\s-]*plan\w*/g, 'dermaplane')
+    .replace(/bio[\s-]*repe+l\w*/g, 'bio repeel')
+    .replace(/decollete|decolleté|decolletagee/g, 'decolletage')
+    .replace(/\s+/g, ' ').trim() + ' ';
+}
+
+var WANTS = {
+  price: /how much|price|prices|pricing|cost|costs|charge|£|fee|expensive|cheapest/,
+  duration: /how long|how many (minutes|hours)|duration|how much time|time does|take to|last/,
+  included: /included|include|includes|whats involved|what happens|what do i get|steps|process|breakdown/
+};
+
+function has(q, re) { return re.test(q); }
+
+function findMatches(q) {
+  var scored = TREATMENTS.map(function (t) {
+    var aliases = ALIASES[t.id] || [];
+    var score = 0;
+    aliases.forEach(function (alias) {
+      if (q.indexOf(' ' + alias + ' ') !== -1) score = Math.max(score, alias.split(' ').length * 10 + 5);
+    });
+    return { id: t.id, score: score };
+  });
+
+  var hits = scored.filter(function (s) { return s.score > 0; });
+
+  if (has(q, /microneedling/) && !has(q, /face only|neck|decolletage/)) {
+    var face = scored.filter(function (s) { return s.id === 'microneedling-face'; })[0];
+    var larger = scored.filter(function (s) { return s.id === 'microneedling-face-neck-decolletage'; })[0];
+    hits = [{ id: 'microneedling-face', score: face.score || 20 }, { id: 'microneedling-face-neck-decolletage', score: larger.score || 18 }];
+  }
+
+  return hits.sort(function (a, b) { return b.score - a.score; }).map(function (h) { return byId(h.id); });
+}
+
+function priceLine(t) { return t.name + ' — ' + t.price + ' · ' + t.duration; }
+function bullets(list) { return list.map(function (i) { return '• ' + i; }).join('\n'); }
+
+function describe(t) {
+  var text = t.name + ' · ' + t.price + ' · ' + t.duration + '\n\n' + t.description;
+  if (t.note) text += '\n\nPlease note: ' + t.note;
+  return text;
+}
+
+function answerForTreatments(list, q) {
+  var primary = list[0];
+
+  if (WANTS.included.test(q) && primary.included.length) {
+    return { text: "What's included in " + primary.name + ' (' + primary.price + ' · ' + primary.duration + '):\n\n' + bullets(primary.included), ctx: { lastTreatmentId: primary.id }, links: [BOOK_CTA] };
+  }
+  if (WANTS.duration.test(q) && !WANTS.price.test(q)) {
+    if (list.length > 1) {
+      return { text: 'Treatment times:\n\n' + list.map(function (t) { return '• ' + t.name + ' — ' + t.duration + ' (' + t.price + ')'; }).join('\n'), ctx: { lastTreatmentId: primary.id }, links: [MENU_CTA] };
+    }
+    return { text: primary.name + ' takes ' + primary.duration + '. It is ' + primary.price + '.', ctx: { lastTreatmentId: primary.id }, links: [BOOK_CTA] };
+  }
+  if (WANTS.price.test(q)) {
+    if (list.length > 1) {
+      return { text: 'There are two microneedling options:\n\n• ' + list[0].name + ' — ' + list[0].price + ' · ' + list[0].duration + '\n• ' + list[1].name + ' — ' + list[1].price + ' · ' + list[1].duration + '\n\nFace only is the ' + list[0].price + ' treatment; the larger area is ' + list[1].price + '.',
+        ctx: { lastTreatmentId: list[0].id }, links: [{ label: 'View both treatments', to: '#/treatments' }, BOOK_CTA] };
+    }
+    return { text: primary.name + ' is ' + primary.price + ', and the appointment takes ' + primary.duration + '.', ctx: { lastTreatmentId: primary.id }, links: [BOOK_CTA] };
+  }
+  if (list.length > 1) {
+    return { text: list[0].name + ' — ' + list[0].price + ' · ' + list[0].duration + '\n\n' + list[0].description + '\n\n' + list[1].name + ' — ' + list[1].price + ' · ' + list[1].duration + '\n\n' + list[1].description, ctx: { lastTreatmentId: list[0].id }, links: [BOOK_CTA] };
+  }
+  return { text: describe(primary), ctx: { lastTreatmentId: primary.id }, links: [{ label: 'See full details', to: '#/treatments' }, BOOK_CTA] };
+}
+
+function priceList() {
+  return 'Here is the full treatment menu:\n\n' + TREATMENTS.map(priceLine).join('\n') + '\n\nA patch test is required before a chemical peel — Natasha will contact you to arrange it.';
+}
+
+var INTENTS = [
+  { re: /^\s*(hi|hello|hey|good (morning|afternoon|evening))\b/, reply: function () {
+      return { text: 'Hello, and welcome to Harwood Skin Clinic. I can help with treatments, prices, durations, what is included, or how to book. What would you like to know?' };
+    } },
+  { re: /is it safe|are they safe|suitab|pregnan|breastfeed|contraindicat|side effect|diagnos|will it (work|hurt)|reaction|sensitive skin|eczema|rosacea|should i (have|get|book)|am i suitable|good for me|medical/i,
+    reply: function () { return { text: SUITABILITY, links: [BOOK_CTA] }; } },
+  { re: /natasha|owner|founder|who runs|who is behind|nhs|dental|background|experience of the clinic|therapist/,
+    reply: function (q) {
+      var links = [{ label: 'Read Natasha’s story', to: '#natasha' }, BOOK_CTA];
+      if (has(q, /dental|nhs|background|experience|15/)) {
+        return { text: 'Natasha Snape spent fifteen years working as an NHS Dental Therapist before opening Harwood Skin Clinic. That background brings a clinical standard of hygiene, anatomical knowledge, precise technique and a genuinely reassuring manner to every appointment.', links: links };
+      }
+      return { text: 'Harwood Skin Clinic is owned and run by Natasha Snape. She spent fifteen years as an NHS Dental Therapist before opening the clinic — so treatments are delivered with clinical hygiene standards, precision and a calm, personal approach.', links: links };
+    } },
+  { re: /what is harwood|about the clinic|private clinic|is this a private|nhs clinic|the clinic/,
+    reply: function () {
+      return { text: 'Harwood Skin Clinic is a private skin clinic in Bolton, owned by Natasha Snape. It offers microneedling, chemical peels, Signature Glass Skin, facials, treatment packages and consultations — delivered one client at a time in a calm, private treatment room.', links: [{ label: 'See the clinic', to: '#clinic' }, MENU_CTA] };
+    } },
+  { re: /where are you|where is|location|address|postcode|bolton|directions|based|come to|finding you/,
+    reply: function () {
+      return { text: 'The clinic is at Rose Lea, Bolton, BL2 — a private clinic in Bolton, United Kingdom. If you need directions or arrival details, message the clinic on Facebook before your appointment.', links: [{ label: 'Message on Facebook', href: FACEBOOK_URL }, BOOK_CTA] };
+    } },
+  { re: /patch test|patch-test|test beforehand|skin test/,
+    reply: function () {
+      return { text: 'Yes — a patch test is required before a chemical peel. Natasha will contact you to arrange it once your peel is booked. Microneedling, Signature Glass Skin, facials and the packages do not carry a listed patch-test requirement.', links: [BOOK_CTA] };
+    } },
+  { re: /how (do|can) i book|book online|booking|book an appointment|appointment|goldie|reserve|schedule|available times|availability|slots/,
+    reply: function () {
+      return { text: 'Appointments are booked through the clinic’s booking page, powered by Goldie. You can choose your treatment there and see the times Natasha has available. Your appointment is confirmed by the booking page only — not by this chat.', links: [BOOK_CTA, { label: 'Message on Facebook', href: FACEBOOK_URL }] };
+    } },
+  { re: /contact|phone|number|email|message|speak to|get in touch|reach you|call/,
+    reply: function () {
+      return { text: 'The clinic’s contact channel is its Facebook page — you can message directly there. For appointments, use the booking page. A phone number and email are not published on this website.', links: [{ label: 'Message on Facebook', href: FACEBOOK_URL }, BOOK_CTA] };
+    } },
+  { re: /opening hours|open on|what time|closed|sunday|saturday|weekend/,
+    reply: function () {
+      return { text: 'The clinic’s opening hours are not listed on this website. Current appointment times are visible on the booking page, and you can message the clinic on Facebook with any timing questions.', links: [BOOK_CTA, { label: 'Message on Facebook', href: FACEBOOK_URL }] };
+    } },
+  { re: /what treatments|which treatments|treatment menu|treatments do you (offer|have)|services|everything you offer|treatment list/,
+    reply: function () {
+      return { text: 'Treatments fall into six areas: Microneedling, Chemical Peels, Signature Glass Skin, Facials, Packages and Consultation.\n\nAt a glance:\n\n' + TREATMENTS.map(priceLine).join('\n'), links: [MENU_CTA, BOOK_CTA] };
+    } },
+  { re: /package|packages|combined|combine|two treatments/,
+    reply: function () {
+      return { text: 'There are two packages:\n\n• Bio RePeel × Microneedling — £90 · 1 hour 15 minutes. A chemical peel and microneedling combined, both targeting similar concerns for skin refinement.\n• Dermaplane × Microneedling — £75 · 1 hour 15 minutes. Dermaplaning gently exfoliates to remove peach fuzz and dead skin cells, paired with microneedling for smoother, brighter-looking skin.', links: [{ label: 'View the packages', to: '#/treatments?category=Packages' }, BOOK_CTA] };
+    } },
+  { re: /atmosphere|cloud bed|heated|what (do|did) (clients|people) say|reviews|review|testimonial|recommend|make(s)? the clinic|experience like|feel like|special|environment|interior|clean/,
+    reply: function (q) {
+      if (has(q, /cloud bed|heated/)) {
+        return { text: 'The heated cloud bed is a treatment bed clients mention again and again — warm, supportive and part of what makes an appointment here feel like a proper pause. It is used during treatments in the clinic.', links: [{ label: 'See the clinic', to: '#clinic' }] };
+      }
+      return { text: 'Clients describe the clinic as luxurious, peaceful and calm, with immaculately clean interiors and natural light from the skylights. The heated cloud bed, Natasha’s welcoming manner, her detailed consultations and her gentle technique come up repeatedly. After treatments such as Signature Glass Skin, clients report skin that looks and feels soft, refreshed and glowing.', links: [{ label: 'Read client experience', to: '#experience' }, BOOK_CTA] };
+    } },
+  { re: /price list|prices|how much (do|does)|what are the prices|what do you charge|cost list|price of everything/,
+    reply: function () { return { text: priceList(), links: [MENU_CTA, BOOK_CTA] }; } },
+  { re: /which treatment|what should i (have|book)|recommend|best for|right for me|not sure|help me choose|find what/,
+    reply: function () {
+      return { text: "I can't assess which treatment is right for you, but I can show you what exists. The menu is grouped as: " + CATEGORIES.filter(function (c) { return c !== 'All Treatments'; }).join(', ') + ".\n\nTell me an area of interest — microneedling, peels, glass skin, facials, packages or a consultation — and I'll tell you exactly what is included and what it costs. For suitability, Natasha will assess you in person.", links: [{ label: 'Use the treatment finder', to: '#/treatments' }, BOOK_CTA] };
+    } }
+];
+
+function askConcierge(raw, ctx) {
+  ctx = ctx || {};
+  var q = norm(raw);
+
+  if (q.trim().length < 2) return { text: 'Ask me about any treatment, price, duration, what is included, or how to book.' };
+
+  for (var i = 0; i < INTENTS.length; i++) {
+    if (INTENTS[i].re.test(q)) {
+      var reply = INTENTS[i].reply(q);
+      reply.ctx = ctx;
+      return reply;
+    }
+  }
+
+  var matches = findMatches(q);
+
+  if (!matches.length && ctx.lastTreatmentId) {
+    var last = byId(ctx.lastTreatmentId);
+    var followUp = WANTS.price.test(q) || WANTS.duration.test(q) || WANTS.included.test(q) || /^(and|what about|also)\b/.test(q.trim());
+    if (last && followUp) matches = [last];
+  }
+
+  if (matches.length) return answerForTreatments(matches, q);
+  if (WANTS.price.test(q)) return { text: priceList(), links: [MENU_CTA, BOOK_CTA], ctx: ctx };
+  if (has(q, /my skin|i have|i suffer|acne|wrinkle|scar|pigment|pores|ageing|aging|problem/)) return { text: SUITABILITY, links: [BOOK_CTA], ctx: ctx };
+
+  return { text: FALLBACK, links: [BOOK_CTA, { label: 'Message on Facebook', href: FACEBOOK_URL }], ctx: ctx };
+}
+
+/* ---------------------------------------------------------------
+   3. HOME LISTS
+   --------------------------------------------------------------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+function applyLinks(scope) {
+  Array.prototype.forEach.call(scope.querySelectorAll('[data-booking]'), function (el) { el.href = BOOKING_URL; });
+  Array.prototype.forEach.call(scope.querySelectorAll('[data-facebook]'), function (el) { el.href = FACEBOOK_URL; });
+}
+applyLinks(document);
+
+var FEATURED = ['signature-glass-skin', 'microneedling-face', 'chemical-peel', 'luxury-facial'];
+
+function renderHomeLists() {
+  document.getElementById('signatureGrid').innerHTML = FEATURED.map(function (id, i) {
+    var t = byId(id);
+    return '<article class="tcard ' + (i % 2 === 1 ? 'offset' : '') + ' reveal">' +
+      '<a href="#/treatments?open=' + t.id + '">' +
+        '<div class="tcard-media">' +
+          '<img src="' + t.image + '" alt="' + esc(t.name) + ' at Harwood Skin Clinic" loading="lazy" />' +
+          '<div class="tcard-tag"><span>' + t.category + '</span><span>View →</span></div>' +
+        '</div>' +
+        '<h3>' + t.shortName + '</h3>' +
+        '<p class="meta">' + t.price + ' · ' + t.duration + '</p>' +
+        '<p class="sum">' + esc(t.summary) + '</p>' +
+      '</a></article>';
+  }).join('');
+
+  document.getElementById('gatewayChips').innerHTML = CATEGORIES.filter(function (c) {
+    return c !== 'All Treatments';
+  }).map(function (c) {
+    return '<a href="#/treatments?category=' + encodeURIComponent(c) + '">' + c + '</a>';
+  }).join('');
+
+  document.getElementById('gatewayList').innerHTML = TREATMENTS.map(function (t) {
+    return '<li><a href="#/treatments?open=' + t.id + '">' +
+      '<span class="name">' + t.name + '</span><span class="dots"></span>' +
+      '<span class="right"><span class="dur">' + t.duration + '</span><span class="price">' + t.price + '</span></span>' +
+      '</a></li>';
+  }).join('');
+
+  document.getElementById('approachList').innerHTML = APPROACH.map(function (item, i) {
+    return '<li class="reveal"><div class="approach-item"><span class="num">0' + (i + 1) + '</span>' +
+      '<div><h3>' + esc(item.title) + '</h3><p>' + esc(item.body) + '</p></div></div></li>';
+  }).join('');
+
+  document.getElementById('themeGrid').innerHTML = EXPERIENCE_THEMES.map(function (theme) {
+    return '<div class="theme reveal"><p class="label">' + esc(theme.label) + '</p>' +
+      '<p class="body">' + esc(theme.body) + '</p></div>';
+  }).join('');
+}
+
+/* ---------------------------------------------------------------
+   4. TREATMENTS PAGE
+   --------------------------------------------------------------- */
+var tState = { category: 'All Treatments', query: '', openId: null, interest: null };
+var treatmentsView = document.getElementById('view-treatments');
+
+var INTERESTS = [
+  { key: 'needling', label: 'Microneedling', category: 'Microneedling', blurb: 'Collagen-focused needling for fine lines, scarring and texture.' },
+  { key: 'peels', label: 'Chemical peels', category: 'Chemical Peels', blurb: 'Acid exfoliation for congestion, pigmentation and dullness.' },
+  { key: 'glass', label: 'Radiance & glow', category: 'Signature Glass Skin', blurb: 'Gentle exfoliation for a smooth, refreshed canvas.' },
+  { key: 'relax', label: 'Pure relaxation', category: 'Facials', blurb: 'No specific treatment focus — simply an hour of calm.' },
+  { key: 'packages', label: 'Combined treatments', category: 'Packages', blurb: 'Two treatments layered into one appointment.' },
+  { key: 'advice', label: 'Advice first', category: 'Consultation', blurb: 'A full hour to talk through your skin with Natasha.' }
+];
+
+function treatmentsMarkup() {
+  return '<section class="treat-hero" aria-labelledby="treat-heading"><div class="wrap">' +
+    '<p class="eyebrow">The treatment menu</p>' +
+    '<div class="g12" style="margin-top:24px;align-items:end">' +
+      '<h1 class="display d1 s7" id="treat-heading">CLINICAL EXPERTISE,<br /><em>listed openly.</em></h1>' +
+      '<div class="side s5">' +
+        '<p>Eight treatments, every price and duration shown. Wherever you begin, the first step is a conversation about your skin.</p>' +
+        '<p class="patch">A patch test is required before a chemical peel. Natasha will contact you to arrange it.</p>' +
+      '</div>' +
+    '</div>' +
+    '<div class="treat-strip"><span>8 treatments</span><span>From £45</span><span>1 hr consultations</span>' +
+      '<a data-booking href="#" target="_blank" rel="noopener noreferrer">Book your appointment →</a></div>' +
+  '</div></section>' +
+
+  '<section class="sec finder" id="finder" aria-labelledby="finder-heading"><div class="wrap"><div class="g12">' +
+    '<div class="s5">' +
+      '<p class="eyebrow">Guided discovery</p>' +
+      '<h2 class="display d4" id="finder-heading">LET&rsquo;S FIND WHAT<br /><em>you&rsquo;d like to explore.</em></h2>' +
+      '<p class="finder-lede">Choose the area you are curious about and we will show you the treatments that sit within it. No diagnosis, no pressure — just clarity.</p>' +
+      '<button type="button" class="finder-ask" data-ask="Which treatment should I have?">Prefer to just ask?</button>' +
+    '</div>' +
+    '<div class="s7">' +
+      '<div class="finder-options" id="finderOptions">' + INTERESTS.map(function (i) {
+        return '<button type="button" class="finder-opt" data-interest="' + i.key + '" aria-pressed="false">' +
+          '<span class="lbl">' + i.label + '</span><span class="blurb">' + i.blurb + '</span></button>';
+      }).join('') + '</div>' +
+      '<div class="finder-panel" id="finderPanel" hidden></div>' +
+    '</div>' +
+  '</div></div></section>' +
+
+  '<section class="menu-sec" id="menu" aria-labelledby="menu-heading"><div class="wrap">' +
+    '<div class="menu-top">' +
+      '<div><p class="eyebrow">Everything on offer</p>' +
+        '<h2 class="display d3" id="menu-heading">The complete menu</h2></div>' +
+      '<div class="search-wrap">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>' +
+        '<label class="sr-only" for="tInput">Search treatments</label>' +
+        '<input id="tInput" type="search" placeholder="Search skin, glass skin, neck, peel…" autocomplete="off" />' +
+        '<button type="button" class="search-clear" id="tClear" aria-label="Clear search">✕</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="chip-row" id="tChips" role="group" aria-label="Filter by treatment area">' +
+      CATEGORIES.map(function (c) {
+        return '<button type="button" class="chip" data-cat="' + c + '" aria-pressed="' + (c === 'All Treatments') + '">' + c + '</button>';
+      }).join('') + '</div>' +
+    '<p class="result-count" id="tCount"></p>' +
+    '<div class="tlist" id="tList"></div>' +
+  '</div></section>' +
+
+  '<section class="treat-cta"><div class="inner"><div>' +
+    '<p class="eyebrow">Ready when you are</p><h2 class="display">Book your appointment</h2>' +
+    '<p>Availability and confirmation are handled on the clinic’s booking page.</p></div>' +
+    '<div class="actions"><a class="btn btn-cream" data-booking href="#" target="_blank" rel="noopener noreferrer">Book online</a>' +
+    '<button type="button" class="btn btn-light" data-ask="How do I book?">Ask the concierge</button></div>' +
+  '</div></section>';
+}
+
+function filteredTreatments() {
+  var q = tState.query.trim().toLowerCase();
+  return TREATMENTS.filter(function (t) {
+    if (tState.category !== 'All Treatments' && t.category !== tState.category) return false;
+    if (!q) return true;
+    var haystack = [t.name, t.shortName, t.category, t.description, t.duration, t.price]
+      .concat(t.included || []).concat(t.keywords || []).join(' ').toLowerCase();
+    return q.split(/\s+/).every(function (word) { return haystack.indexOf(word) !== -1; });
+  });
+}
+
+function rowMarkup(t, i) {
+  var included = (t.included && t.included.length)
+    ? '<div class="block"><h3>What&rsquo;s included</h3><ul class="bullets">' +
+      t.included.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul></div>'
+    : '';
+  var faq = (t.faq && t.faq.length)
+    ? '<div class="block"><h3>Common questions</h3><div class="qchips">' +
+      t.faq.map(function (q) { return '<button type="button" class="qchip" data-ask="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') +
+      '</div></div>'
+    : '';
+  return '<article class="trow" id="treatment-' + t.id + '" data-cat="' + t.category + '">' +
+    '<button type="button" class="trow-head" aria-expanded="false" aria-controls="panel-' + t.id + '">' +
+      '<span class="idx">' + String(i + 1).padStart(2, '0') + '</span>' +
+      '<span class="trow-main"><span class="trow-cat">' + t.category + '</span>' +
+        '<span class="trow-name">' + t.name + '</span>' +
+        '<span class="trow-inline">' + t.price + ' · ' + t.duration + '</span></span>' +
+      '<span class="trow-price"><span class="dur">' + t.duration + '</span><span class="amt">' + t.price + '</span></span>' +
+      '<span class="toggle" aria-hidden="true">+</span>' +
+    '</button>' +
+    '<div class="panel" id="panel-' + t.id + '"><div class="panel-inner">' +
+      '<div class="panel-body"><p class="desc">' + esc(t.description) + '</p>' +
+        (t.note ? '<p class="note">' + esc(t.note) + '</p>' : '') + included + faq +
+        '<div class="panel-actions">' +
+          '<a class="btn btn-solid" data-booking href="#" target="_blank" rel="noopener noreferrer">Book ' + t.shortName + '</a>' +
+          '<button type="button" class="linkish" data-ask="What is included in ' + esc(t.name) + '?">Ask the concierge</button>' +
+        '</div></div>' +
+      '<div class="panel-aside"><div class="frame"><img src="' + t.image + '" alt="' + esc(t.name) + ' treatment at Harwood Skin Clinic" loading="lazy" /></div>' +
+        '<dl class="facts"><div><dt>Duration</dt><dd>' + t.duration + '</dd></div><div><dt>Price</dt><dd>' + t.price + '</dd></div></dl></div>' +
+    '</div></div></article>';
+}
+
+function paintList() {
+  var list = document.getElementById('tList');
+  if (!list) return;
+  var items = filteredTreatments();
+
+  if (!items.length) {
+    list.innerHTML = '<div class="empty"><h3>Nothing matched that search.</h3>' +
+      '<p>Try a treatment name, a concern such as pigmentation, or a word like neck, dermaplaning or peel.</p>' +
+      '<div class="actions"><button type="button" class="btn btn-outline" id="tReset">Reset the menu</button>' +
+      '<button type="button" class="btn btn-solid" data-ask="What treatments do you offer?">Ask the concierge</button></div></div>';
+  } else {
+    list.innerHTML = items.map(rowMarkup).join('') + '<div class="tail"></div>';
+    items.forEach(function (t) {
+      if (t.id === tState.openId) {
+        var el = document.getElementById('treatment-' + t.id);
+        if (el) {
+          el.classList.add('open');
+          var head = el.querySelector('.trow-head');
+          if (head) head.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  }
+  applyLinks(list);
+
+  var count = document.getElementById('tCount');
+  if (count) {
+    count.textContent = items.length + (items.length === 1 ? ' treatment' : ' treatments') +
+      ' shown' + (tState.query ? ' for “' + tState.query + '”' : '');
+  }
+
+  var chips = document.getElementById('tChips');
+  if (chips) {
+    Array.prototype.forEach.call(chips.querySelectorAll('.chip'), function (chip) {
+      chip.setAttribute('aria-pressed', String(chip.getAttribute('data-cat') === tState.category));
+    });
+  }
+}
+
+function renderFinder() {
+  var panel = document.getElementById('finderPanel');
+  if (!panel) return;
+  var active = null;
+  for (var i = 0; i < INTERESTS.length; i++) if (INTERESTS[i].key === tState.interest) active = INTERESTS[i];
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-interest]'), function (btn) {
+    btn.setAttribute('aria-pressed', String(btn.getAttribute('data-interest') === tState.interest));
+  });
+
+  if (!active) { panel.hidden = true; panel.innerHTML = ''; return; }
+
+  var matches = TREATMENTS.filter(function (t) { return t.category === active.category; });
+  panel.hidden = false;
+  panel.innerHTML = '<p class="count">' + matches.length + ' ' + (matches.length === 1 ? 'treatment' : 'treatments') + ' in ' + active.label + '</p>' +
+    '<ul>' + matches.map(function (t) {
+      return '<li><span>' + t.name + '</span><span class="p">' + t.price + ' · ' + t.duration + '</span></li>';
+    }).join('') + '</ul>' +
+    '<div class="actions"><button type="button" class="btn btn-solid" data-show-cat="' + active.category + '">Show these treatments</button>' +
+    '<button type="button" class="btn btn-outline" data-ask="Tell me about ' + esc(matches[0].name) + '">Ask the concierge</button></div>' +
+    '<p class="fine">Suitability is individual. Natasha will assess the appropriate options during a professional consultation.</p>';
+}
+
+function renderTreatments() {
+  treatmentsView.innerHTML = treatmentsMarkup();
+  applyLinks(treatmentsView);
+
+  var input = document.getElementById('tInput');
+  var clear = document.getElementById('tClear');
+  input.value = tState.query;
+  if (tState.query) clear.classList.add('show');
+
+  input.addEventListener('input', function () {
+    tState.query = input.value;
+    if (input.value && tState.category !== 'All Treatments') {
+      tState.category = 'All Treatments';
+      setRoute('#/treatments');
+    }
+    clear.classList.toggle('show', !!input.value);
+    paintList();
+  });
+
+  clear.addEventListener('click', function () {
+    tState.query = '';
+    input.value = '';
+    clear.classList.remove('show');
+    paintList();
+  });
+
+  document.getElementById('tChips').addEventListener('click', function (e) {
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    tState.category = chip.getAttribute('data-cat');
+    setRoute(tState.category === 'All Treatments' ? '#/treatments' : '#/treatments?category=' + encodeURIComponent(tState.category));
+    paintList();
+  });
+
+  document.getElementById('finderOptions').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-interest]');
+    if (!btn) return;
+    var key = btn.getAttribute('data-interest');
+    tState.interest = tState.interest === key ? null : key;
+    renderFinder();
+  });
+
+  paintList();
+  renderFinder();
+  observeReveals(treatmentsView);
+}
+
+/* Bound once: the container survives re-renders, its children do not. */
+treatmentsView.addEventListener('click', function (e) {
+  var head = e.target.closest('.trow-head');
+  if (head) {
+    var row = head.closest('.trow');
+    var isOpen = row.classList.contains('open');
+    Array.prototype.forEach.call(treatmentsView.querySelectorAll('.trow.open'), function (r) {
+      r.classList.remove('open');
+      var h = r.querySelector('.trow-head');
+      if (h) h.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      row.classList.add('open');
+      head.setAttribute('aria-expanded', 'true');
+      tState.openId = row.id.replace('treatment-', '');
+    } else {
+      tState.openId = null;
+    }
+    return;
+  }
+
+  var showCat = e.target.closest('[data-show-cat]');
+  if (showCat) {
+    tState.category = showCat.getAttribute('data-show-cat');
+    setRoute('#/treatments?category=' + encodeURIComponent(tState.category));
+    paintList();
+    var menu = document.getElementById('menu');
+    if (menu) menu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  if (e.target.closest('#tReset')) {
+    tState.query = '';
+    tState.category = 'All Treatments';
+    var i2 = document.getElementById('tInput');
+    var c2 = document.getElementById('tClear');
+    if (i2) i2.value = '';
+    if (c2) c2.classList.remove('show');
+    setRoute('#/treatments');
+    paintList();
+  }
+});
+
+/* ---------------------------------------------------------------
+   5. ROUTER
+   --------------------------------------------------------------- */
+var SECTIONS = ['statement', 'natasha', 'clinic', 'approach', 'experience'];
+var currentView = 'home';
+
+function showView(name) {
+  document.getElementById('view-home').hidden = name !== 'home';
+  treatmentsView.hidden = name !== 'treatments';
+  currentView = name;
+  if (name === 'treatments') renderTreatments();
+}
+
+function scrollToId(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function parseHash() {
+  var raw = location.hash.replace(/^#/, '');
+  if (!raw) return { view: 'home' };
+  if (SECTIONS.indexOf(raw) !== -1) return { view: 'home', section: raw };
+  if (raw.indexOf('/treatments') === 0) {
+    return { view: 'treatments', params: new URLSearchParams(raw.split('?')[1] || '') };
+  }
+  return { view: 'home' };
+}
+
+function setRoute(hash) {
+  if (location.hash === hash) return;
+  try {
+    history.replaceState(null, '', hash);
+  } catch (err) {
+    /* opened from a local file — the URL stays as it is, the view still updates */
+  }
+}
+
+function route() {
+  var parsed = parseHash();
+
+  if (parsed.view === 'treatments') {
+    var params = parsed.params || new URLSearchParams();
+    var cat = params.get('category');
+    tState.category = (cat && CATEGORIES.indexOf(cat) !== -1) ? cat : 'All Treatments';
+    tState.openId = params.get('open') || null;
+    tState.query = '';
+    showView('treatments');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+
+    if (tState.openId) {
+      setTimeout(function () {
+        var el = document.getElementById('treatment-' + tState.openId);
+        if (el) {
+          el.classList.add('open');
+          var h = el.querySelector('.trow-head');
+          if (h) h.setAttribute('aria-expanded', 'true');
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 140);
+    }
+    return;
+  }
+
+  if (currentView !== 'home') {
+    showView('home');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  if (parsed.section) setTimeout(function () { scrollToId(parsed.section); }, 60);
+}
+
+window.addEventListener('hashchange', route);
+
+/* ---------------------------------------------------------------
+   6. UI BEHAVIOUR
+   --------------------------------------------------------------- */
+(function loader() {
+  var el = document.getElementById('loader');
+  var bar = document.getElementById('loaderBar');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var total = reduce ? 320 : 1900;
+  var start = performance.now();
+
+  function finish() {
+    document.body.classList.remove('is-loading');
+    if (!el || el.dataset.done) return;
+    el.dataset.done = '1';
+    el.classList.add('leaving');
+    setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 850);
+  }
+
+  function tick(now) {
+    var p = Math.min(1, (now - start) / total);
+    if (bar) bar.style.width = Math.round(p * 100) + '%';
+    if (p < 1) requestAnimationFrame(tick);
+    else setTimeout(finish, reduce ? 0 : 300);
+  }
+
+  requestAnimationFrame(tick);
+  setTimeout(finish, reduce ? 1200 : 4200);
+})();
+
+(function headerScroll() {
+  var header = document.getElementById('siteHeader');
+  var floating = document.getElementById('floatingBook');
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    if (header) header.classList.toggle('scrolled', y > 24);
+    if (floating) floating.classList.toggle('show', y > 900);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+/* wordmark returns to the top of the page */
+(function wordmarks() {
+  Array.prototype.forEach.call(document.querySelectorAll('.wordmark'), function (link) {
+    link.addEventListener('click', function () {
+      if (location.hash === '#/' || location.hash === '') window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+})();
+
+(function mobileMenu() {
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('mobileMenu');
+  var close = document.getElementById('menuClose');
+
+  function openMenu() {
+    menu.classList.add('open');
+    menu.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+  Array.prototype.forEach.call(menu.querySelectorAll('[data-close-menu]'), function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+})();
+
+var io = ('IntersectionObserver' in window)
+  ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
+  : null;
+
+function observeReveals(scope) {
+  Array.prototype.forEach.call((scope || document).querySelectorAll('.reveal:not(.in)'), function (node) {
+    if (io) io.observe(node); else node.classList.add('in');
+  });
+}
+
+/* ---------------------------------------------------------------
+   7. CONCIERGE UI
+   --------------------------------------------------------------- */
+(function concierge() {
+  var launch = document.getElementById('conciergeLaunch');
+  var panel = document.getElementById('concierge');
+  var scrollEl = document.getElementById('ccScroll');
+  var chipsEl = document.getElementById('ccChips');
+  var form = document.getElementById('ccForm');
+  var input = document.getElementById('ccInput');
+  var state = { typing: false };
+  var messages = [];
+  var ctx = {};
+  var timer = null;
+  var counter = 0;
+
+  function render() {
+    var html = messages.map(function (m) {
+      var links = (m.links && m.links.length)
+        ? '<div class="cc-links">' + m.links.map(function (l) {
+            if (l.href) {
+              return '<a class="cc-link" href="' + l.href + '" target="_blank" rel="noopener noreferrer">' + esc(l.label) + ' <span aria-hidden="true">↗</span></a>';
+            }
+            return '<a class="cc-link" href="' + l.to + '">' + esc(l.label) + ' <span aria-hidden="true">→</span></a>';
+          }).join('') + '</div>'
+        : '';
+      return '<div class="cc-msg ' + (m.role === 'user' ? 'user' : '') + '">' +
+        '<div class="cc-bubble"><p>' + esc(m.text) + '</p>' + links + '</div></div>';
+    }).join('');
+
+    if (state.typing) html += '<div class="cc-typing" role="status" aria-label="Concierge is answering"><i></i><i></i><i></i></div>';
+
+    scrollEl.innerHTML = html;
+    scrollEl.scrollTop = scrollEl.scrollHeight;
+
+    var chips = messages.length > 1 ? QUICK_QUESTIONS.slice(0, 4) : QUICK_QUESTIONS;
+    chipsEl.innerHTML = chips.map(function (q) {
+      return '<button type="button" class="cc-chip" data-ask="' + esc(q) + '">' + esc(q) + '</button>';
+    }).join('');
+  }
+
+  function send(raw) {
+    var text = String(raw || '').trim();
+    if (!text) return;
+
+    var answer = askConcierge(text, ctx);
+    ctx = answer.ctx || ctx;
+
+    messages.push({ id: 'm' + (++counter), role: 'user', text: text });
+    input.value = '';
+    state.typing = true;
+    render();
+
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      messages.push({ id: 'm' + (++counter), role: 'concierge', text: answer.text, links: answer.links });
+      state.typing = false;
+      render();
+    }, 600);
+  }
+
+  function open(question) {
+    panel.classList.add('open');
+    launch.style.display = 'none';
+    launch.setAttribute('aria-expanded', 'true');
+    if (question) setTimeout(function () { send(question); }, 380);
+    else setTimeout(function () { input.focus(); }, 200);
+  }
+
+  function close() {
+    panel.classList.remove('open');
+    launch.style.display = '';
+    launch.setAttribute('aria-expanded', 'false');
+  }
+
+  function reset() {
+    clearTimeout(timer);
+    ctx = {};
+    state.typing = false;
+    messages = [{ id: 'm0', role: 'concierge', text: WELCOME }];
+    render();
+  }
+
+  launch.addEventListener('click', function () { open(); });
+  document.getElementById('ccClose').addEventListener('click', close);
+  document.getElementById('ccReset').addEventListener('click', reset);
+  form.addEventListener('submit', function (e) { e.preventDefault(); send(input.value); });
+
+  chipsEl.addEventListener('click', function (e) {
+    var chip = e.target.closest('[data-ask]');
+    if (chip) send(chip.getAttribute('data-ask'));
+  });
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-ask]');
+    if (!trigger || trigger.closest('#concierge')) return;
+    e.preventDefault();
+    open(trigger.getAttribute('data-ask'));
+  });
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && panel.classList.contains('open')) close();
+  });
+
+  reset();
+})();
+
+/* ---------------------------------------------------------------
+   8. BOOT
+   --------------------------------------------------------------- */
+renderHomeLists();
+route();
+observeReveals(document);
+
+</script>
+</body>
+</html>
